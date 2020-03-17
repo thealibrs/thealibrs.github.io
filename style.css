@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.main-window{
+    margin: 0;
+    padding: 0;
+    background-image: url("img/arkaplan.png");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.profile-border{
+    position: relative;
+    left: 42%;
+    top: 20%;
+    height: 150px;
+    width: 150px;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, rgb(14,173,173)), color-stop(0.67, rgb(141, 190, 94)));
+    background-image: -moz-linear-gradient(center bottom, rgb(14, 173, 48) 33%, rgb(0, 255, 0) 67% );
+    padding: 3px;
+    border-radius: 50% 50%;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.575); 
+}
+.profile-border:hover{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.575);
+    transition: .5s;
+}
+.prof-pic{
+    height: 150px;
+    width: 150px;
+    border-radius: 50% 50%; 
+}
+
+.about-me{
+    position: relative;
+    width: 650px;
+    height: 250px;
+    left: 30%;
+    top: 18%;
+}
+.about-me h1{
+    position: absolute;
+    font-size: 20px;
+    font-family: 'Kanit', sans-serif;;
+}
+.about-me h3{
+    font-family: 'Kanit', sans-serif;
+    position: absolute;
+    top: 22px;
+    font-size: 20px;
+}
+.soft{
+    color:rgb(245, 187, 63);
+    font-family: 'Acme', sans-serif;
+    text-shadow:  2px 2px 2px rgba(0, 0, 0, 0.541);
+    
+}
+
+.soft:hover{
+    color: white;
+    transition: .5s;
+}
+.about-me ul{
+    position: absolute;
+    padding: 5px;
+    width: 350px;
+    top: 10px;
+    left: 5px;
+    list-style-type: none;
+    
+}
+.p{
+    color:rgb(233, 119, 104);
+    font-family: 'Acme', sans-serif;
+    text-shadow:  2px 2px 2px rgba(0, 0, 0, 0.541);
+    font-size: 20px;
+}
+.m{
+    color:rgb(214, 233, 104);
+    font-family: 'Acme', sans-serif;
+    text-shadow:  2px 2px 2px rgba(0, 0, 0, 0.541);
+    font-size: 20px;
+}
+.d{
+    color:rgb(104, 233, 143);
+    font-family: 'Acme', sans-serif;
+    text-shadow:  2px 2px 2px rgba(0, 0, 0, 0.541);
+    font-size: 20px;
+}
+.a{
+    color:rgb(104, 233, 233);
+    font-family: 'Acme', sans-serif;
+    text-shadow:  2px 2px 2px rgba(0, 0, 0, 0.541);
+    font-size: 20px;
+}
