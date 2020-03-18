@@ -1,96 +1,435 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
     padding: 0;
+   background-color: F5EEEE;
 }
-.main-window{
-    margin: 0;
-    padding: 0;
-    background-image: url("arkaplan.png");
-    background-size: cover;
+/* ******************************************************** SOCIAL BAR ************************************** */
+.social-bar{
+    position: relative;
+    background: linear-gradient(90deg, rgba(15,15,15,1) 36%, rgba(243,164,44,1) 75%);   
     width: 100%;
-    height: 100%;
+    height: 30px;
 }
-.profile-border{
-    position: relative;
-    left: 42%;
-    top: 20%;
-    height: 150px;
-    width: 150px;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, rgb(14,173,173)), color-stop(0.67, rgb(141, 190, 94)));
-    background-image: -moz-linear-gradient(center bottom, rgb(14, 173, 48) 33%, rgb(0, 255, 0) 67% );
-    padding: 3px;
-    border-radius: 50% 50%;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.575); 
+.social-bar img{
+    padding-top: 4px;
+    padding-left: 6px;
+    width: 20px;
+    height: 20px;
 }
-.profile-border:hover{
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.575);
-    transition: .5s;
-}
-.prof-pic{
-    height: 150px;
-    width: 150px;
-    border-radius: 50% 50%; 
-}
-
-.about-me{
-    position: relative;
-    width: 650px;
-    height: 250px;
-    left: 30%;
-    top: 18%;
-}
-.about-me h1{
+/* ********************************************************* MENU ************************************** */
+.menu1  {
     position: absolute;
-    font-size: 20px;
-    font-family: 'Kanit', sans-serif;;
-}
-.about-me h3{
-    font-family: 'Kanit', sans-serif;
-    position: absolute;
-    top: 22px;
-    font-size: 20px;
-}
-.soft{
-    color:rgb(245, 187, 63);
-    font-family: 'Acme', sans-serif;
-    text-shadow:  2px 2px 2px rgba(0, 0, 0, 0.541);
+    padding-left: 350px;
+    top: 25 px;
+    background-color: rgb(243, 164, 44);
+    width: 45%;
+    height: 70px;
+    right: 0;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%);
     
 }
 
-.soft:hover{
+.menu1 li{
+    margin-left: 50px;
+    display: inline;
+    list-style: none; 
+    padding-left: 45px; 
+}
+
+.button1{
+    position: absolute;
+    right: 15%;
+    top: 4px;
+}
+
+.menu1 li a{
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 10px;
+    left: 40%;
+    font-family: 'Noto Serif', serif; 
+    color: #1b1919;
+}
+
+.menu1 li a:hover{
+    text-decoration: none;
+    font-weight: bold;
     color: white;
     transition: .5s;
 }
-.about-me ul{
+/* *************************************************************CARD********************************************* */
+.card{
+    position: relative;
+    width: 100%;
+    height: 598px;
+    top:0;
+    background: url("img/resim1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.shadow{  /* CARD'ın önüne shadow ekledik*/
     position: absolute;
-    padding: 5px;
-    width: 350px;
-    top: 10px;
-    left: 5px;
-    list-style-type: none;
+    width: 100%;
+    height: 598px;
+    background-color: rgba(0, 0, 0, 0.692);
+}
+.first{
+    position: absolute;
+    top: 90px;
+    left: 150px;
+    color:  rgb(241, 148, 9);
+    font-size: 70px;
+    font-family: 'Fugaz One', cursive;
+    font-weight: 200;
+    text-shadow: 1.5px 1.5px 1.5px  rgba(255, 228, 196, 0.685);
+}
+.second{
+    position: absolute;
+    top: 155px;
+    left: 200px;
+    color:  rgb(241, 148, 9);
+    font-size: 70px;
+    font-family: 'Fugaz One', cursive;
+    font-weight: 200;
+    text-shadow: 1.5px 1.5px 1.5px  rgba(255, 228, 196, 0.685);
+}
+.card h1:hover{
+    transition: .5s;
+    font-weight: 100;
+    font-size: 71px;
+}
+.sub-message{
+    position: absolute;
+    top: 290px;
+    color:  white;
+    font-family: 'Roboto', sans-serif;
+    width: 50%;
+    left: 20%;
     
 }
-.p{
-    color:rgb(233, 119, 104);
-    font-family: 'Acme', sans-serif;
-    text-shadow:  2px 2px 2px rgba(0, 0, 0, 0.541);
-    font-size: 20px;
+.buttons{
+    position: absolute;
+    left: 30%;
+    top: 65%;
+    
 }
-.m{
-    color:rgb(214, 233, 104);
-    font-family: 'Acme', sans-serif;
-    text-shadow:  2px 2px 2px rgba(0, 0, 0, 0.541);
-    font-size: 20px;
+.buttons a{
+    position: relative;
+    top: 40px;
+    height: 10px;
+    width: 20px;
+   /* border: 1px solid rgb(241, 148, 9);*/
+    padding: 10px;
+    margin: 45px;
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(241, 148, 9);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 4  00;
+    letter-spacing: 2px;
 }
-.d{
-    color:rgb(104, 233, 143);
-    font-family: 'Acme', sans-serif;
-    text-shadow:  2px 2px 2px rgba(0, 0, 0, 0.541);
-    font-size: 20px;
+.buttons a:hover{
+    border:1px solid rgb(241, 148, 9); 
+    transition: .2s;
+    border-radius: 8px;
 }
-.a{
-    color:rgb(104, 233, 233);
-    font-family: 'Acme', sans-serif;
-    text-shadow:  2px 2px 2px rgba(0, 0, 0, 0.541);
-    font-size: 20px;
+
+/* ************************************************CARD2****************************************************** */
+.card2{
+    position: absolute;
+    background-color:  rgb(243, 164, 44);;
+    width: 100%;
+    height: 200px;
+    top:628px;
+}
+/******** CARD2 MADDELER ***********/
+.madde1{
+    position: absolute;
+    top: 10px;
+    left: 10%;
+    width: 250px;
+    height: 150px;
+    z-index: 1;
+    box-shadow: 1px 1px 4px 2px rgba(61, 60, 60, 0.247);
+    border-radius: 10px;
+}
+
+.verticle1{
+    position: relative;
+    left: 33%;
+    top:40px;
+    width: 1px;
+    height: 90px;
+    background-color: rgba(0, 0, 0, 0.158);
+    border-radius: 5px;
+
+}
+/*.madde1:hover{
+    background-color: rgba(0, 0, 0, 0.158);
+    transition: .6s;
+    border-radius: 10px;
+    box-shadow: 1px 2px rgba(61, 60, 60, 0.349);
+}*/
+.madde2{
+    position: absolute;
+    top: 10px;
+    left: 40%;
+    width: 250px;
+    height: 150px;
+    z-index: 1;
+    box-shadow: 1px 1px 4px 2px rgba(61, 60, 60, 0.247);
+    border-radius: 10px;
+}
+.verticle2{
+    position: absolute;
+    left: 63%;
+    top:40px;
+    width: 1px;
+    height: 90px;
+    background-color: rgba(0, 0, 0, 0.158);
+    border-radius: 5px;
+
+}
+/*.madde2:hover{
+    background-color: rgba(0, 0, 0, 0.014);
+    transition: .6s;
+    border-radius: 10px;
+}*/
+.madde3{
+    position: absolute;
+    top: 10px;
+    right: 10%;
+    width: 250px;
+    height: 150px;
+    z-index: 1;
+    box-shadow: 1px 1px 4px 2px rgba(61, 60, 60, 0.247);
+    border-radius: 10px;
+}
+/*.madde3:hover{
+    background-color: rgba(0, 0, 0, 0.158);
+    transition: .6s;
+    border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 2px rgba(61, 60, 60, 0.349);
+}*/
+.card2-logo{
+    position: absolute;
+    height: 85px;
+    width: 85px;
+    left: 80px;
+    top: 10px;
+}
+
+.yazi1{
+    position: absolute;
+    top: 75px;
+    left:45px ;
+    font-family: 'Noto Serif', serif;
+
+}
+.yazi2{
+    position: absolute;
+    top: 75px;
+    left:20px ;
+    font-family: 'Noto Serif', serif;
+
+}
+.yazi3{
+    position: absolute;
+    top: 75px;
+    left:20px ;
+    font-family: 'Noto Serif', serif;
+
+}
+/*******************************************************CARD3****************************************************/
+.card3  {
+    position: absolute;
+    background-color: rgb(66, 61, 61);
+    background: url("img/resim2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 628px;
+    top: 800px;
+}
+.shadow2{
+    position: absolute;
+    width: 100%;
+    height: 628px;
+    background-color: rgba(0, 0, 0, 0.692);
+
+}
+.forms{
+    position: relative;
+    margin: auto;
+    top: 32px;
+    width: 90%;
+    height: 90%;
+    /*background:rgba(0, 0, 0, 0.226);*/
+    border-radius: 7px;
+    /*box-shadow: 2px 4px 2px 2px #0303035d;*/
+}
+.verticle3{
+    position: relative;
+    margin: auto;
+    top:130px;
+    width: 1px;
+    height: 300px;
+    background-color: rgba(209, 202, 202, 0.582);
+    border-radius: 5px;
+}
+
+.register{
+    position: absolute;
+    background: rgba(172, 168, 164, 0.322);
+    box-shadow: 2px 4px 2px 2px #0303035d;
+    border-radius: 5px;;
+    width: 450px;
+    height: 450px;
+    top: 60px;
+    left: 50px;
+}
+.reg-message{
+    position: relative;
+    left: 2%;
+    font-family:'Noto Serif', serif;
+}
+.reg-message h1{
+    color: rgb(241, 148, 9);
+    font-size: 35px;
+    font-family:'Fugaz One', cursive;
+    font-weight: 200;
+}
+.reg-message h3{
+    position: relative;
+    left: 20px;
+    bottom: 25px;
+    color:rgba(255, 254, 254, 0.685);
+    
+}
+.reg-form{
+    position: absolute;
+    width: 400px;
+    padding: 40px;
+    top: 20%;
+    right: 20%;
+    font-family: 'Noto Serif', serif;
+    color: white;
+}
+
+
+.reg-form input{
+    border: 0;
+    margin: 20px auto;
+    background: none;
+    display: block;
+    border: 2px solid #c2b6ae;
+    border-radius: 10px;
+    padding: 10px 5px;
+    outline: none;
+    color: rgb(241, 148, 9); ;
+    transition: 0.25s;
+}
+.reg-form input[type="submit"]{
+    width: 100px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Carter One', cursive;
+    font-size: 15px;
+}
+.reg-form input[type="submit"]:hover{
+    box-shadow:2px 4px 2px 2px #03030336;
+    transition: 0.3s;
+    border-color: rgb(241, 148, 9);
+    color: rgb(241, 148, 9);
+}
+.reg-form input[type="text"]:focus,.reg-form input[type="password"]:focus,.reg-form input[type="email"]:focus{
+    border-color: rgb(241, 148, 9);;
+}
+.reg-form input[type="text"]:hover,.reg-form input[type="password"]:hover,.reg-form input[type="email"]:hover{
+    border-color: rgb(241, 148, 9);
+}
+
+
+.sign-in{
+    position: absolute;
+    background: rgba(172, 168, 164, 0.322);
+    box-shadow: 2px 4px 2px 2px #0303035d;
+    border-radius: 5px;;
+    width: 450px;
+    height: 450px;
+    top: 60px;
+    right: 50px;
+}
+
+.sign-message{
+    position: relative;
+    left: 2%;
+    font-family:'Noto Serif', serif;
+}
+.sign-message h1{
+    color: rgb(241, 148, 9);
+    font-size: 35px;
+    font-family:'Fugaz One', cursive;
+    font-weight: 200;
+}
+.sign-message h3{
+    position: relative;
+    left: 20px;
+    bottom: 25px;
+    color:rgba(255, 254, 254, 0.685);
+}
+.sign-form input{
+    border: 0;
+    margin: 20px auto;
+    background: none;
+    display: block;
+    border: 2px solid #c2b6ae;
+    border-radius: 10px;
+    padding: 10px 5px;
+    outline: none;
+    color: rgb(241, 148, 9); ;
+    transition: 0.25s;
+}
+.sign-form input[type="submit"]{
+    width: 100px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Carter One', cursive;
+    font-size: 15px;
+}
+.sign-form input[type="submit"]:hover{
+    box-shadow:2px 4px 2px 2px #03030336;
+    transition: 0.3s;
+    border-color: rgb(241, 148, 9);
+    color: rgb(241, 148, 9);
+}
+.sign-form input[type="text"]:focus,.sign-form input[type="password"]:focus,.sign-form input[type="email"]:focus{
+    border-color: rgb(241, 148, 9);;
+}
+.sign-form input[type="text"]:hover,.sign-form input[type="password"]:hover,.sign-form input[type="email"]:hover{
+    border-color: rgb(241, 148, 9);
+}
+/******************************************ABOUT******************************************************************************************/
+.about  {
+    position: absolute;
+    background-color: #cc8e35;
+    width: 100%;
+    height: 628px;
+    top: 1428px;
+}
+/*****************************************CONTACT*******************************************************************/
+.contact{
+    position: relative;
+    top:1407px;
+    background-color: #2d3436;
+    width: 100%;
+    height: 250px;
 }
