@@ -24,7 +24,7 @@ body{
 
 .container{
     position: absolute;
-    top: 50%;
+    top: 59%;
     transform: translateY(-50%);
     width: 100%;
     text-align: center;
