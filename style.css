@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    padding: 0;
+    background:#d7f0ea; 
+}
+
+.avatar{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-155%);
+}
+.avatar img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px -6px #000000bb; 
+    transition: 0.3s ease;
+}
+.avatar img:hover{
+    transform: scale(1.11);
+    box-shadow: 0 5px 20px -6px #16a085;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    background:#d7f0ea;
+}
+
+.btn{
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background: #f1f1f1;
+    margin: 10px;
+    border-radius: 30%;
+    box-shadow: 0 5px 20px -6px #00000070;
+    color: #16a085;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn i{
+    line-height: 90px;
+    font-size: 25px;
+    transition: 0.2s linear;
+}
+
+.btn:hover i{
+    transform: scale(1.4);
+    color:  #f1f1f1;
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;;
+    background:#16a085;
+    transform: rotate(45deg);
+    left:-110%;
+    top: 90%;
+}
+
+.btn:hover::before{
+    animation: aaa 0.7s 1;
+    top: -10%;
+    left: -10%;
+}
+
+.section{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,30%);
+}
+
+.section p{
+    font-size: 12px;
+    font-family:'Lilita One', cursive;
+    letter-spacing: 1.2;
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes aaa{
+    0%{
+        left:-110%;
+        top: 90%;
+}
+    
+    50%{
+        left:10%;
+        top: -30%;
+    }
+
+    100%{
+        top: -10%;
+        left: -10%;
+    }
+
+
+}
