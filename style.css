@@ -1,14 +1,22 @@
 body{
     margin: 0;
     padding: 0;
-    background:#d7f0ea; 
+    background-image: linear-gradient(180deg, #84fab0 0%, #8fd3f4 83%);
 }
 
 .avatar{
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 65%;
     transform: translate(-50%,-155%);
+    text-align: center;
+}
+.avatar h2{
+    font-size: 15px;
+    line-height: 1.2;
+    font-family: 'Merriweather', serif;
+    padding: 2px;
+
 }
 .avatar img{
     width: 150px;
@@ -28,7 +36,6 @@ body{
     transform: translateY(-50%);
     width: 100%;
     text-align: center;
-    background:#d7f0ea;
 }
 
 .btn{
@@ -74,13 +81,13 @@ body{
 
 .section{
     position: absolute;
-    top: 90%;
+    top: 92%;
     left: 50%;
     transform: translate(-50%,30%);
 }
 
 .section p{
-    font-size: 12px;
+    font-size: 10px;
     font-family:'Lilita One', cursive;
     letter-spacing: 1.2;
 }
@@ -89,19 +96,15 @@ body{
     .avatar {
         position: absolute;
         left: 50%;
-        top: 42%;
+        top: 65%;
         transform: translate(-50%,-155%);
     }
+    .section span{
+        display: block; 
+        text-align: center;
+    }
+
   }
-
-
-
-
-
-
-
-
-
 
 
 @keyframes aaa{
