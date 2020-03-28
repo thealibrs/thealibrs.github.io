@@ -44,7 +44,7 @@ h3{
     color: #ff9f43;  
 }
 
-.container-back{
+#title{
     background:linear-gradient(rgba(0, 0, 0, 0.89),rgba(0,0,0,0.5)), url("img/resim1.jpg");
     background-position: center;
     background-size: cover;
