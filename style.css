@@ -28,7 +28,7 @@ h3{
 
 .navbar-dark .navbar-brand{ /*Logo*/
     font-family:'Montserrat', sans-serif ;
-    text-transform: lowercase;
+    text-transform: uppercase;
     font-size: 2.5rem;
     font-weight: 900;
     color:#ff9f43;
@@ -170,7 +170,7 @@ h3{
 
 @media (max-width: 1028px){
     .navbar-dark .navbar-brand{
-        font-size:2rem ;
+        font-size:1.5rem ;
     }
     .navbar{
         padding: 2% 8%;
