@@ -29,7 +29,8 @@ h3{
 }
 
 .navbar-dark .navbar-brand{ /*Logo*/
-    font-family: 'Ubuntu', sans-serif;
+    font-family:'Montserrat', sans-serif ;
+    text-transform: lowercase;
     font-size: 2.5rem;
     font-weight: 900;
     color:#ff9f43;
@@ -56,17 +57,22 @@ h3{
     padding: 0;
 }
 
+.row .buttons{
+    margin: 50px 0;
+}
 
 .buttons a{
     text-decoration: none;
     font-size: 25px;
-    padding: 0 8%;
+    padding: 2% 8%;
     font-weight: bold;
     color: #ff9f43;
     transition: .5s ease;
+    border: 1px solid #ff9f43 ;
 }
 .buttons a:hover{
     color: wheat;
+    border-color: white;
 }
 
 .row{
@@ -133,7 +139,7 @@ h3{
     margin-bottom: 50px;
     color: rgb(39, 33, 33);
     text-transform: uppercase;
-    font-family:'Fugaz One', cursive;;
+    font-family:'Fugaz One', cursive;
 }
 
 .register-form{
@@ -144,18 +150,18 @@ h3{
 
 
 .signin-form{
+    margin-top: 70px;
     background-color:#ff9f43 ;
     padding: 15px 20px;
     border-radius: 8px;
 }
 
-
-
+s-form{}
 
 
 #footer{
     text-align: center;
-    padding: 5% 20%;
+    padding: 4% 20%;
     background-color:#ff9f43
 }
 
@@ -168,4 +174,14 @@ h3{
 
 #footer i:hover{
     color:white;
+}
+
+@media (max-width: 1028px){
+    h1{
+        font-size: 3rem;
+    }
+    .buttons a{
+        font-size: 20px;
+        border: 1px solid #ff9f43 ;
+    }
 }
