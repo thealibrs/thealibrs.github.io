@@ -9,6 +9,7 @@ body{
 h1{
     text-transform: uppercase;
     font-family:'Fugaz One', cursive;
+    margin-bottom:4%
     font-weight: 900;
     font-size: 4rem;
     line-height: 1;
