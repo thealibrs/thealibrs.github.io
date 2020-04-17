@@ -1,186 +1,127 @@
-html{
-    scroll-behavior: smooth;
-}
-
 body{
-    font-family:'Montserrat', sans-serif ;  
-}
-
-h1{
-    text-transform: uppercase;
-    font-family:'Fugaz One', cursive;
-    margin-bottom:4%
-    font-weight: 900;
-    font-size: 4rem;
-    line-height: 1;
-    color: #ff9f43
-}
-
-h3{
-    color: white;
-    font-family:'Montserrat', sans-serif ;
-    font-weight: bold;
-}
-
-.navbar{
-    padding: 1% 8%;
-   
-}
-
-.navbar-dark .navbar-brand{ /*Logo*/
-    font-family:'Montserrat', sans-serif ;
-    text-transform: uppercase;
-    font-size: 2.5rem;
-    font-weight: 900;
-    color:#ff9f43;
-}
-
-.nav-item{
-    padding: 0 25px;
-}
-
-.navbar-dark .navbar-nav .nav-link{ /*menü*/
-    font-size: 1.2rem;
-    font-family: "Montserrat-Light";
-    color: #ff9f43;  
-}
-
-#title{
-    background:linear-gradient(rgba(0, 0, 0, 0.89),rgba(0,0,0,0.5)), url("img/resim1.jpg");
-    background-position: center;
-    background-size: cover;
     margin: 0;
     padding: 0;
+    background-image: linear-gradient(180deg, #84fab0 0%, #8fd3f4 83%);
 }
 
-.row .buttons{
-    margin: 50px 0;
-}
-
-.buttons a{
-    text-decoration: none;
-    font-size: 25px;
-    padding: 2% 8%;
-    font-weight: bold;
-    color: #ff9f43;
-    transition: .5s ease;
-    border: 1px solid #ff9f43 ;
-}
-
-.buttons a:hover{
-    color: wheat;
-    border-color: white;
-}
-
-.row{
-    padding: 8% 12%;
-}
-
-.title-btn{
+.avatar{
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%,-155%);
     text-align: center;
-    padding: 10% 5%;
 }
-  
+.avatar h2{
+    font-size: 15px;
+    line-height: 1.2;
+    font-family: 'Merriweather', serif;
+    padding: 2px;
 
-/* FEATURES */
+}
+.avatar img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px -6px #000000bb; 
+    transition: 0.3s ease;
+}
+.avatar img:hover{
+    transform: scale(1.11);
+    box-shadow: 0 5px 20px -6px #16a085;
+}
 
-#features{
+.container{
+    position: absolute;
+    top: 59%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.btn{
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background: #f1f1f1;
+    margin: 10px;
+    border-radius: 30%;
+    box-shadow: 0 5px 20px -6px #00000070;
+    color: #16a085;
+    overflow: hidden;
     position: relative;
-    padding: 0 7%;
 }
 
-.feature-box{
-    text-align: center;
-    padding: 5%;
+.btn i{
+    line-height: 90px;
+    font-size: 25px;
+    transition: 0.2s linear;
 }
 
-.features-img{
-    width: 120px;
-    height: 120px;  
+.btn:hover i{
+    transform: scale(1.4);
+    color:  #f1f1f1;
 }
 
-#features h3{
-    font-family: "Montserrat";
-    font-weight: 900;
-    color: #ff9f43;
+.btn::before{
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;;
+    background:#16a085;
+    transform: rotate(45deg);
+    left:-110%;
+    top: 90%;
 }
 
-/*TESTIMONIAL*/
-
-#testimonials{
-    text-align: center;
-    background-color:#ff9f43 ;
-    color: white;
+.btn:hover::before{
+    animation: aaa 0.7s 1;
+    top: -10%;
+    left: -10%;
 }
 
-.carousel-item{
-    padding:7% 15%;
+.section{
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%,30%);
 }
 
-.carousel-item h2{
-    font-family:'Philosopher', sans-serif;
-    font-weight:bold
+.section p{
+    font-size: 10px;
+    font-family:'Lilita One', cursive;
+    letter-spacing: 1.2;
 }
 
-.testimonial-img{
-    width: 10%;
-    border-radius: 100%;
-    margin: 20px;
-}
-
-/* FORMS*/
-
-#forms h1{
-    font-size: 45px;
-    margin-bottom: 50px;
-    color: rgb(39, 33, 33);
-    text-transform: uppercase;
-    font-family:'Fugaz One', cursive;
-}
-
-.register-form{
-    background-color:#ff9f43 ;
-    padding: 15px 20px;
-    border-radius: 8px;
-}
-
-
-.signin-form{
-    margin-top: 70px;
-    background-color:#ff9f43 ;
-    padding: 15px 20px;
-    border-radius: 8px;
-}
-
-#footer{
-    text-align: center;
-    padding: 4% 20%;
-    background-color:#ff9f43
-}
-
-#footer i{
-    color: black;
-    padding: 0 7px;
-    margin-bottom: 15px;
-    transition: .5s ease;
-}
-
-#footer i:hover{
-    color:white;
-}
-
-@media (max-width: 1028px){
-    .navbar-dark .navbar-brand{
-        font-size:1.5rem ;
+@media only screen and (max-width: 600px) {
+    .avatar {
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        transform: translate(-50%,-155%);
     }
-    .navbar{
-        padding: 2% 8%;
+    .section span{
+        display: block; 
+        text-align: center;
     }
-    h1{
-        font-size: 3rem;
+
+  }
+
+
+@keyframes aaa{
+    0%{
+        left:-110%;
+        top: 90%;
+}
+    
+    50%{
+        left:10%;
+        top: -30%;
     }
-    .buttons a{
-        font-size: 20px;
-        border: 1px solid #ff9f43 ;
+
+    100%{
+        top: -10%;
+        left: -10%;
     }
+
+
 }
