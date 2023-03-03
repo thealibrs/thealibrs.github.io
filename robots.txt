@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://bayten.dev/sitemap.xml
