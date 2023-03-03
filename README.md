@@ -1,2 +1,0 @@
-# website
-Ali Barış Ayten
