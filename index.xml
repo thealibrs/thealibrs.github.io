@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Baris</title>
-    <link>https://bayten.dev/</link>
+    <link>http://bayten.dev/</link>
     <description>Recent content on Baris</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© Athul</copyright><atom:link href="https://bayten.dev/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© Copyright notice</copyright><atom:link href="http://bayten.dev/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
