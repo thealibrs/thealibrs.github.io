@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://hugo-blog-awesome.netlify.app/</loc>
+    <loc>https://bayten.dev/</loc>
   </url><url>
-    <loc>https://hugo-blog-awesome.netlify.app/categories/</loc>
+    <loc>https://bayten.dev/categories/</loc>
   </url><url>
-    <loc>https://hugo-blog-awesome.netlify.app/tags/</loc>
+    <loc>https://bayten.dev/tags/</loc>
   </url>
 </urlset>
