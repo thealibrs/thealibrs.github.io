@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">String, StringBuilder, and StringBuffer in Java | Baris&#39; Personal Blog</title>
+<meta property="og:title" content="String, StringBuilder, and StringBuffer in Java | Baris&#39; Personal Blog" />
+<meta name="twitter:title" content="String, StringBuilder, and StringBuffer in Java | Baris&#39; Personal Blog" />
+<meta itemprop="name" content="String, StringBuilder, and StringBuffer in Java | Baris&#39; Personal Blog" />
+<meta name="application-name" content="String, StringBuilder, and StringBuffer in Java | Baris&#39; Personal Blog" />
+<meta property="og:site_name" content="Awesome hugo blog" />
+
+<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
+<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+
+
+  <meta itemprop="image" content="https://bayten.dev/" />
+  <meta property="og:image" content="https://bayten.dev/" />
+  <meta name="twitter:image" content="https://bayten.dev/" />
+  <meta name="twitter:image:src" content="https://bayten.dev/" />
+
+
+
+
+    
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2023-03-15T12:45:12&#43;0300 />
+    <meta property="article:published_time" content=2023-03-15T12:45:12&#43;0300 />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "String, StringBuilder, and StringBuffer in Java",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2023-03-15",
+        "description": "",
+        "wordCount":  966 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2023-03-15",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Baris\u0027 Personal Blog"
+        }
+    }
+    </script>
+
+  <meta name="generator" content="Hugo 0.111.1">
+
+  
+  <link rel="canonical" href="https://bayten.dev/posts/string-stringbuilder-and-stringbuffer-in-java/"><link href="/sass/main.min.53de30ba20a16931ebbb3d27b23bb0186a34998b550e90cc205fbb8bb1da156a.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet"></head><body data-theme = "dark" class="notransition">
+<script src="https://bayten.dev/js/themeLoader.min.4e9e1a253d543bbfec02e7f2460d9621e719fd739dc8a5256faa91cda6e12e03.js"></script><div class="navbar" role="navigation">
+  <nav class="menu" aria-label="Main Navigation">
+    <a href="/" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+    </a>
+    <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+    <label for="menu-trigger">
+      <span class="menu-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+      </span>
+    </label>
+
+    <div class="trigger">
+      <ul class="trigger-container">
+        
+        
+          <li>
+            <a 
+            class="menu-link "
+            href="/">
+            Home
+            </a>
+            
+          </li>
+        
+          <li>
+            <a 
+            class="menu-link active"
+            href="/posts/">
+            Posts
+            </a>
+            
+          </li>
+        
+          <li>
+            <a 
+            class="menu-link "
+            href="/about/">
+            About
+            </a>
+            
+          </li>
+        
+        <li class="menu-separator">
+          <span>|</span>
+        </li>
+      </ul>
+      <a id="mode" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">String, StringBuilder, and StringBuffer in Java</h1>
+                
+                <div class="post-meta">
+                    <time datetime="2023-03-15T12:45:12&#43;03:00" itemprop="datePublished"> Mar 15, 2023 </time>
+                </div>
+            </header>
+            <div class="page-content">
+                <p>Hello!🖖🏼</p>
+<p>This article will be about the <strong>String</strong> class that we frequently use in Java and its alternatives, <strong>StringBuilder</strong> and <strong>StringBuffer</strong>. There may be points that I missed, skipped, or inadvertently conveyed incorrectly. If you give me feedback via email in such a situation, I would be very happy.</p>
+<p>Now, let&rsquo;s get started🚀</p>
+<p><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmRkYWFhYTgxZWNiOTgzMTc2ODIyMmIwYTE0NTE1MTc5Mzc0YWRmZCZjdD1n/BpGWitbFZflfSUYuZ9/giphy.gif" alt=""></p>
+<h2 id="1string"><strong>1.String</strong></h2>
+<p>First, let&rsquo;s look at the String class. As we all know, the String class is one of the complex data types in Java that represents character arrays. This class stores an array of characters and provides multiple functions for manipulating these characters. When we want to use it, we define it as shown below and assign a value.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">   <span class="n">String</span> <span class="n">str</span><span class="o">=</span> <span class="s">&#34;Merhaba&#34;</span><span class="o">;</span>
+</span></span></code></pre></div><p>So far, there is no problem here. However, as we know, in Java, the <strong>String</strong> class is &ldquo;<strong>immutable</strong>&rdquo; meaning it cannot be changed. But of course, some of you might say, &ldquo;<em>Oh no, I have changed and assigned many times and performed the operations I wanted!</em>&rdquo;</p>
+<p>This is where situations arise that prompted me to write this article.</p>
+<p>In fact, when we manipulate a String variable, the value that the variable points to does not change 🙂. In such an operation, a new space is opened in the Heap, and the manipulated value is placed there, and our reference points to this new address.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;Merhaba&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">str</span><span class="o">.</span><span class="na">concat</span><span class="o">(</span><span class="s">&#34;Dünya&#34;</span><span class="o">);</span>
+</span></span></code></pre></div><p>When we define as shown above and then perform the &ldquo;<em>conca</em>t&rdquo; operation, as mentioned, a new space is created in memory, and our &ldquo;<em>str</em>&rdquo; variable now references the address where the &ldquo;<em>MerhabaDünya</em>&rdquo; variable is located.</p>
+<p>So, a new space is being constantly opened in memory every time the variable is manipulated. And of course, this is not something we would want because it causes both performance and time loss. 🙂</p>
+<p><img src="https://i.hizliresim.com/fqus7se.jpg" alt="a"></p>
+<p> 
+At this point, the <strong>StringBuilder</strong> class comes to our help.</p>
+<h2 id="2stringbuilder"><strong>2.StringBuilder</strong></h2>
+<p>The role of <strong>StringBuilder</strong> is also the same as <strong>String</strong>. It represents character strings. However, the difference from String is that it is a &ldquo;<strong>mutable</strong>&rdquo; or changeable class. Therefore, it is a better choice than the <strong>String</strong> class for efficient text manipulation.</p>
+<p>For example, if we want to convert all the words in a text file to uppercase, the <strong>StringBuilder</strong> class can easily do this without recreating the entire text in memory (String was creating a new space in memory for this new value).</p>
+<p>Or a very simple example like the one below.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">    <span class="n">StringBuilder</span> <span class="n">sentence</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">(</span><span class="s">&#34;This is a sentence.&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sentence</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;Added word.&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sentence</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span> <span class="c1">//This is a sentence.Added word.
+</span></span></span></code></pre></div><p>However, there is an important drawback to this class that has not yet been mentioned, which is its lack of a thread-safe structure. If a process involving threads is to be used, the <strong>StringBuilder</strong> class is not suitable in this scenario. This limitation can be explained with the following code snippet:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">    <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Thread</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10000</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;A&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Thread</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10000</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;B&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">t1</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t2</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</span></span></code></pre></div><p>In this example, two distinct threads, <strong>t1</strong> and <strong>t2</strong>, access the <strong>StringBuilder</strong> object concurrently and append the characters &ldquo;A&rdquo; and &ldquo;B&rdquo; 10,000 times each in a sequential manner. However, due to the lack of synchronization in the <strong>StringBuilder</strong> object, the resulting output is indeterminate and can yield varying results on each execution. In essence, a data race condition is introduced.</p>
+<p>To address this issue, we can use the <strong>StringBuffer</strong> class instead.</p>
+<h2 id="3stringbuffer"><strong>3.StringBuffer</strong></h2>
+<p>I won&rsquo;t repeat the same information with StringBuffer here, if you have read this far, you can already guess that the only difference of this class is its &ldquo;thread-safe&rdquo; or synchronized structure. It has the same methods and logic as StringBuilder.</p>
+<p>However, this great feature also brings some drawbacks. Its synchronized structure causes it to work slower than StringBuilder.</p>
+<p>If we try to explain this with a small code snippet,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">StringBufferVsStringBuilder</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">1000000</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">long</span> <span class="n">startTime</span><span class="o">,</span> <span class="n">endTime</span><span class="o">,</span> <span class="n">duration</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// StringBuffer performance test
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">StringBuffer</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="n">buffer</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;hello&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">duration</span> <span class="o">=</span> <span class="o">(</span><span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Time taken by StringBuffer: &#34;</span> <span class="o">+</span> <span class="n">duration</span> <span class="o">+</span> <span class="s">&#34; nanoseconds&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//Time taken by StringBuffer: 19494000 nanoseconds
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// StringBuilder performance test
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">StringBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;hello&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">duration</span> <span class="o">=</span> <span class="o">(</span><span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Time taken by StringBuilder: &#34;</span> <span class="o">+</span> <span class="n">duration</span> <span class="o">+</span> <span class="s">&#34; nanoseconds&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//Time taken by StringBuilder: 17145000 nanoseconds
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></div><p>This code calculates the elapsed time for <strong>StringBuilder</strong> and <strong>StringBuffer</strong> to append the word &ldquo;<em>hello</em>&rdquo; one million times. When we run this code, we can easily observe that <strong>StringBuffer</strong> works slower due to its synchronized structure. We can make this difference more prominent by increasing the value of N.</p>
+<p>As a summary, I am adding the features of both classes in the table below,</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Features</th>
+<th style="text-align:left">StringBuilder</th>
+<th style="text-align:left">StringBuffer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Thread-Safe</strong></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Performance</strong></td>
+<td style="text-align:left">Faster</td>
+<td style="text-align:left">Slower</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Memory Usage</strong></td>
+<td style="text-align:left">Less</td>
+<td style="text-align:left">More</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Mutable</strong></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left"> </td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Finally,</p>
+<ul>
+<li>There is no harm in using the <strong>String</strong> class, but we should keep in mind that it is immutable, and every time we try to modify it, <strong>a new memory space is created</strong>.</li>
+<li><strong>StringBuilder</strong>, on the other hand, performs all operations without the need for creating new memory spaces, but it may provide incorrect results in thread-containing applications since it does not have a synchronized structure.</li>
+<li>We can solve the problem of <strong>StringBuilder</strong> by using <strong>StringBuffer</strong>, which operates in a synchronized structure, but this class may cause some performance loss compared to <strong>StringBuilder</strong>.</li>
+</ul>
+<p>If you have taken the time to read this far, thank you very much. If you notice any mistakes, please feel free to contact me via email.</p>
+<p>Happy coding! 🎉
+ 
+ </p>
+<p> 
+ 
+ 
+ </p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html">https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuffer.html">https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuffer.html</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html">https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/string-vs-stringbuffer-vs-stringbuilder">https://www.digitalocean.com/community/tutorials/string-vs-stringbuffer-vs-stringbuilder</a></li>
+</ul>
+
+            </div>
+        </article>
+    </main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> © 2023 Baris Ayten🖖🏼 </span>
+</footer>
+<script src="https://bayten.dev/js/themeSwitchnMenu.min.2a402288242b6930b175a0722c267e2353055739b3975834df35e56d00dd8f50.js"></script></body>
+</html>
