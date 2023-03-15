@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Baris&#39; Personal Blog</title>
+    <link>https://bayten.dev/posts/</link>
+    <description>Recent content in Posts on Baris&#39; Personal Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Mar 2023 12:45:12 +0300</lastBuildDate><atom:link href="https://bayten.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>String, StringBuilder, and StringBuffer in Java</title>
+      <link>https://bayten.dev/posts/post1/</link>
+      <pubDate>Wed, 15 Mar 2023 12:45:12 +0300</pubDate>
+      
+      <guid>https://bayten.dev/posts/post1/</guid>
+      <description>Hello!🖖🏼
+This article will be about the String class that we frequently use in Java and its alternatives, StringBuilder and StringBuffer. There may be points that I missed, skipped, or inadvertently conveyed incorrectly. If you give me feedback via email in such a situation, I would be very happy.
+Now, let&amp;rsquo;s get started🚀
+1.String First, let&amp;rsquo;s look at the String class. As we all know, the String class is one of the complex data types in Java that represents character arrays.</description>
+    </item>
+    
+  </channel>
+</rss>

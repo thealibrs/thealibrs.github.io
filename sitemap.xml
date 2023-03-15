@@ -2,12 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bayten.dev/</loc>
+    <lastmod>2023-03-15T12:45:12+03:00</lastmod>
+  </url><url>
+    <loc>https://bayten.dev/posts/</loc>
+    <lastmod>2023-03-15T12:45:12+03:00</lastmod>
+  </url><url>
+    <loc>https://bayten.dev/posts/post1/</loc>
+    <lastmod>2023-03-15T12:45:12+03:00</lastmod>
+  </url><url>
     <loc>https://bayten.dev/about/</loc>
     <lastmod>2023-03-11T21:07:32+03:00</lastmod>
   </url><url>
     <loc>https://bayten.dev/categories/</loc>
-  </url><url>
-    <loc>https://bayten.dev/</loc>
   </url><url>
     <loc>https://bayten.dev/tags/</loc>
   </url>
