@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Leetcode | Best Time to Buy and Sell Stock | Baris&#39; Personal Blog</title>
+<meta property="og:title" content="Leetcode | Best Time to Buy and Sell Stock | Baris&#39; Personal Blog" />
+<meta name="twitter:title" content="Leetcode | Best Time to Buy and Sell Stock | Baris&#39; Personal Blog" />
+<meta itemprop="name" content="Leetcode | Best Time to Buy and Sell Stock | Baris&#39; Personal Blog" />
+<meta name="application-name" content="Leetcode | Best Time to Buy and Sell Stock | Baris&#39; Personal Blog" />
+<meta property="og:site_name" content="Awesome hugo blog" />
+
+<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
+<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+
+
+  <meta itemprop="image" content="https://bayten.dev/" />
+  <meta property="og:image" content="https://bayten.dev/" />
+  <meta name="twitter:image" content="https://bayten.dev/" />
+  <meta name="twitter:image:src" content="https://bayten.dev/" />
+
+
+
+
+    
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2023-03-16T23:55:15&#43;0300 />
+    <meta property="article:published_time" content=2023-03-16T23:55:15&#43;0300 />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Leetcode | Best Time to Buy and Sell Stock",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2023-03-16",
+        "description": "",
+        "wordCount":  650 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2023-03-16",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Baris\u0027 Personal Blog"
+        }
+    }
+    </script>
+
+  <meta name="generator" content="Hugo 0.111.1">
+
+  
+  <link rel="canonical" href="https://bayten.dev/posts/best-time-to-buy-and-sel-stock/"><link href="/sass/main.min.5c3526dbfd0864d88f74bed943d6f70206ba385a17901d9d96b534b398530649.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet"></head><body data-theme = "dark" class="notransition">
+<script src="https://bayten.dev/js/themeLoader.min.4e9e1a253d543bbfec02e7f2460d9621e719fd739dc8a5256faa91cda6e12e03.js"></script><div class="navbar" role="navigation">
+  <nav class="menu" aria-label="Main Navigation">
+    <a href="/" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+    </a>
+    <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+    <label for="menu-trigger">
+      <span class="menu-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+      </span>
+    </label>
+
+    <div class="trigger">
+      <ul class="trigger-container">
+        
+        
+          <li>
+            <a 
+            class="menu-link "
+            href="/">
+            Home
+            </a>
+            
+          </li>
+        
+          <li>
+            <a 
+            class="menu-link active"
+            href="/posts/">
+            Posts
+            </a>
+            
+          </li>
+        
+          <li>
+            <a 
+            class="menu-link "
+            href="/about/">
+            About
+            </a>
+            
+          </li>
+        
+        <li class="menu-separator">
+          <span>|</span>
+        </li>
+      </ul>
+      <a id="mode" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Leetcode | Best Time to Buy and Sell Stock</h1>
+                
+                <div class="post-meta">
+                    <time datetime="2023-03-16T23:55:15&#43;03:00" itemprop="datePublished"> Mar 16, 2023 </time>
+                </div>
+            </header>
+            <div class="page-content">
+                <p><img src="https://i.hizliresim.com/qqdrh2x.png" alt=""></p>
+<h3 id="selamlar"><strong>Selamlar</strong>🖖🏼</h3>
+<p>Bu yazının konusu bir Leetcode sorusu olacak. <strong>Competitive Algorithm</strong> konusuna ayrıca bir önem ve özen göstermeye çalışıyorum. Ne kadar çok proje yapmış ya da ne kadar tecrübeli olsanız da, bu alan sürekli pratik istiyor. Bende imkan buldukça her gün bir soru çözüp, kendimi olabildiğince diri ve antrenmanlı tutmaya çalışıyorum. Blogumda da çözdüğüm ve hoşuma giden güzel soruların çözüm yollarını ve kodunu açıklamaya çalışacağım.
+ </p>
+<p>Bugünkü sorumuz <strong><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best Time to Buy and Sell Stock</a></strong>. <strong>Google</strong>&lsquo;ın mülakat sorularından ve kolay kategorisinde olduğu belirtilmiş.</p>
+<p>Yavaştan soruya geçelim.</p>
+<h2 id="soruyu-anlayalım"><strong>Soruyu Anlayalım</strong>🤔</h2>
+<p>Soruda bize, fiyat bilgilerinin bulunduğu bir integer array dizisi <code>prices</code> veriliyor ve bu dizinin indisleri de <code>prices[i]</code> o günün sayısını belirtiyor (1. gün, 3.gün gibi&hellip;). Sorunun bizden istediği, <strong>fiyatın en düşük olduğu günde alım yapıp, kârımızı maksimum yapabileceğimiz günde satış yapmak ve böylece ulaşılabilecek maksimum kâra ulaşmamız</strong>.</p>
+<h3 id="örnek-1"><strong>Örnek 1</strong></h3>
+<pre tabindex="0"><code>Input  : prices = [7,1,5,3,6,4]
+Output : 5
+
+Aslında burada yapılan işlem 2.günde 1 birimden alış yapıp(indisin 1&#39;den başladığını düşünüyoruz, sıfırıncı gün yok) 5.günde 6 birimden satıp, 6 - 1 = 5, 5 birimlik kâr elde etmek.
+</code></pre><h3 id="örnek-2"><strong>Örnek 2</strong></h3>
+<pre tabindex="0"><code>Input  : prices = [2,8,3,1,12,5]
+Output : 11
+
+Burada da 4.gün alıp 5.gün satarsak eğer maks. 11 birimlik kâr elde ederiz.
+</code></pre><h3 id="örnek-3"><strong>Örnek 3</strong></h3>
+<pre tabindex="0"><code>Input  : prices = [7,6,4,3,1]
+Output : 0
+
+Mesela burada da bir türlü kâra geçirecek bir pozisyon bulunmadığı için alım-satım yapılamıyor dolayısıyla sıfır döndürülüyor.
+</code></pre><p> </p>
+<h2 id="soruya-girişelim"><strong>Soruya Girişelim</strong>🥊</h2>
+<p>Aslında yapmamız gereken şey temelde basit, <strong>alım yaptığın günün fiyatı, satış yaptığın günün fiyatından küçük olsun ki herhangi bir kârdan bahsedebilelim</strong>. Yani kontrol etmemiz gereken durumlardan ilki, <strong>kâr ediyor muyuz?</strong> Tamam, diyelim ki kâr ediyoruz. Fakat bize her kâr lazım değil, <strong>maksimum olanı gerekli</strong>.</p>
+<p>Ve bu kontrolleri de, son güne kadar gerçekleştirmek. Ardından maksimum kârı bulup bunu döndürebiliriz.</p>
+<p>Şimdi bu düşündüklerimizi <strong>pseudo-code</strong> olarak yazalım.</p>
+<pre tabindex="0"><code>1. maxProfit ve localProfit integer değişkenleri oluşturulup sıfıra atanır.
+
+2. buyDay ve sellDay integer değişkenleri 0 ve 1 olarak atanır.
+
+3. sellDay, prices dizisinin uzunluğundan küçük olduğu sürece bir döngü başlatılır.
+
+    4. Eğer prices[buyDay] &lt; prices[sellDay] ise:
+        5. localProfit değişkenine prices[sellDay] - prices[buyDay] atanır.
+
+        6. maxProfit, localProfit ve maxProfit arasındaki maksimum değere atanır.
+
+    7. Aksi takdirde, buyDay değişkenine sellDay değeri atanır.
+
+    8.sellDay değişkeni bir artırılır.
+
+9. Döngü tamamlandığında, maxProfit değişkeni döndürülür.
+</code></pre><p>Şimdi buradaki mantığı açıklamaya çalışayım.</p>
+<ul>
+<li>İlk olarak <code>maxProfit</code> ve <code>localProfit</code> adında iki değişken oluşturup, bunlara sıfır atadım. <code>maxProfit</code> bizim asıl sonucumuz olacak, <code>localProfit</code> de kâr ihtimallerini tutan değişkenimiz olacak.</li>
+<li>Sonrasında <code>buyDay</code> ve <code>sellDay</code> adında 0 ve 1 atanmış iki değişkenimiz ile günler üzerinde gezineceğimiz pointer&rsquo;larımızı tanımladık, yani bir nevi <code>i</code> ve <code>j</code>. <code>sellDay</code>&lsquo;i 1 olarak tanımladık çünkü satış günü hep bir sonraki gün olacak.</li>
+<li>Ardından <code>prices</code> dizisinin içinde bir <code>while</code> döngüsü başlatıyoruz. <code>sellDay</code> yani satış gününü temsil eden değişkenimiz son güne ulaşınca döngüyü tamamlamış oluyoruz.</li>
+<li>Döngüye girdiğimizde her iterasyonda <code>prices[sellDay] - prices[buyDay]</code> ile kâr ihtimalimiz var mı kontrol ediyoruz, eğer böyle bir durum varsa da bunu hesaplayıp <code>localProfit</code>&lsquo;e atıyoruz. Ardından elimizdeki <code>maxProfit</code> ile karşılaştırıyoruz, hangisi daha büyük? Büyük olanı <code>maxProfit</code>&lsquo;e tekrar atıyoruz.</li>
+<li>Eğer kâr ihtimalimiz yok ise <code>buyDay</code>&lsquo;i, <code>sellDay</code>&lsquo;in olduğu noktaya getiriyoruz. Çünkü kâr ihtimali yok ise oradan alış yapmamıza gerek yok, bu yüzden o değişkeni ileri çekmiş oluyoruz.</li>
+<li>Son olarak da artık <code>sellday</code>&lsquo;i bir ileri alıyoruz yeni bir iterasyona geçiş ve yeni kâr hesaplaması için.</li>
+</ul>
+<p>Buraya kadar sorun yoksa asıl koda geçebiliriz.</p>
+<h2 id="coding"><strong>Coding</strong>💻</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxProfit</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">prices</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">maxProfit</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">localProfit</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">buyDay</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">sellDay</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="o">(</span><span class="n">sellDay</span> <span class="o">&lt;</span> <span class="n">prices</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">prices</span><span class="o">[</span><span class="n">buyDay</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">prices</span><span class="o">[</span><span class="n">sellDay</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">localProfit</span> <span class="o">=</span> <span class="n">prices</span><span class="o">[</span><span class="n">sellDay</span><span class="o">]</span> <span class="o">-</span> <span class="n">prices</span><span class="o">[</span><span class="n">buyDay</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">            <span class="n">maxProfit</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">maxProfit</span><span class="o">,</span> <span class="n">localProfit</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">buyDay</span> <span class="o">=</span> <span class="n">sellDay</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sellDay</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">maxProfit</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Kodun Time Complexity&rsquo;sine bakacak olursak da, burada bir <code>while</code> döngüsü kullanarak <code>prices</code> array&rsquo;inin elemanlarını yani tüm input&rsquo;u dolaştığımız için BigO notasyonumuzun <code>O(n)</code> olduğunu görürüz. Yani yapılan işlem sayısı input&rsquo;un boyutu <code>n</code> ile doğru orantılıdır diyebiliriz.</p>
+<p>Tabii ki bu problemin birden farklı ve daha efektif çözüm yolları olabilir, benim çözüm yolum bu şekildeydi ve bunu açıklayıcı bir şekilde anlatmak istedim.</p>
+<p>Buraya kadar zaman ayırıp okuduğunuz için teşekkürler,</p>
+<p>Happy Coding🎉</p>
+
+            </div>
+        </article>
+    </main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> © 2023 Baris Ayten🖖🏼 </span>
+</footer>
+<script src="https://bayten.dev/js/themeSwitchnMenu.min.2a402288242b6930b175a0722c267e2353055739b3975834df35e56d00dd8f50.js"></script></body>
+</html>
