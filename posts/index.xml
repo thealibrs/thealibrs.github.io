@@ -6,16 +6,7 @@
     <description>Recent content in Posts on Baris&#39; Personal Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Mar 2023 23:55:15 +0300</lastBuildDate><atom:link href="https://bayten.dev/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Leetcode | Best Time to Buy and Sell Stock</title>
-      <link>https://bayten.dev/posts/best-time-to-buy-and-sel-stock/</link>
-      <pubDate>Thu, 16 Mar 2023 23:55:15 +0300</pubDate>
-      
-      <guid>https://bayten.dev/posts/best-time-to-buy-and-sel-stock/</guid>
-      <description>Selamlar🖖🏼 Bu yazının konusu bir Leetcode sorusu olacak. Competitive Algorithm konusuna ayrıca bir önem ve özen göstermeye çalışıyorum. Ne kadar çok proje yapmış ya da ne kadar tecrübeli olsanız da, bu alan sürekli pratik istiyor. Bende imkan buldukça her gün bir soru çözüp, kendimi olabildiğince diri ve antrenmanlı tutmaya çalışıyorum. Blogumda da çözdüğüm ve hoşuma giden güzel soruların çözüm yollarını ve kodunu açıklamaya çalışacağım. Bugünkü sorumuz Best Time to Buy and Sell Stock.</description>
-    </item>
-    
+    <lastBuildDate>Wed, 15 Mar 2023 12:45:12 +0300</lastBuildDate><atom:link href="https://bayten.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>String, StringBuilder, and StringBuffer in Java</title>
       <link>https://bayten.dev/posts/string-stringbuilder-and-stringbuffer-in-java/</link>
