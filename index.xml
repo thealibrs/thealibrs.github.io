@@ -6,7 +6,19 @@
     <description>Recent content in Home on Baris&#39; Personal Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Mar 2023 11:52:29 +0300</lastBuildDate><atom:link href="https://bayten.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Mar 2023 15:09:52 +0300</lastBuildDate><atom:link href="https://bayten.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mutable and Immutable in Java</title>
+      <link>https://bayten.dev/posts/mutable-and-immutable-in-java/</link>
+      <pubDate>Thu, 23 Mar 2023 15:09:52 +0300</pubDate>
+      
+      <guid>https://bayten.dev/posts/mutable-and-immutable-in-java/</guid>
+      <description>Hello Folks 🖖🏼,
+The topic of this article will be about the concept of Mutablity and Immutablity in Java. I will try to answer questions such as &amp;ldquo;What does Mutable &amp;amp; Immutable mean?&amp;rdquo;, &amp;ldquo;What is the logic behind this functionality?&amp;rdquo;, &amp;ldquo;How are Mutable or Immutable classes created?&amp;rdquo;, &amp;ldquo;What are the advantages and disadvantages?&amp;rdquo;.
+Let&amp;rsquo;s dive right in and explore these fascinating concepts together. 🚀
+1. Mutable Classes Mutable objects are objects that can be modified after they are initialized.</description>
+    </item>
+    
     <item>
       <title>Leetcode | Best Time to Buy and Sell Stock</title>
       <link>https://bayten.dev/posts/best-time-to-buy-and-sel-stock/</link>

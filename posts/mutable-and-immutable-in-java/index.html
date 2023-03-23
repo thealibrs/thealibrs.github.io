@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Mutable and Immutable in Java | Baris&#39; Personal Blog</title>
+<meta property="og:title" content="Mutable and Immutable in Java | Baris&#39; Personal Blog" />
+<meta name="twitter:title" content="Mutable and Immutable in Java | Baris&#39; Personal Blog" />
+<meta itemprop="name" content="Mutable and Immutable in Java | Baris&#39; Personal Blog" />
+<meta name="application-name" content="Mutable and Immutable in Java | Baris&#39; Personal Blog" />
+<meta property="og:site_name" content="Awesome hugo blog" />
+
+<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
+<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+
+
+  <meta itemprop="image" content="https://bayten.dev/" />
+  <meta property="og:image" content="https://bayten.dev/" />
+  <meta name="twitter:image" content="https://bayten.dev/" />
+  <meta name="twitter:image:src" content="https://bayten.dev/" />
+
+
+
+
+    
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2023-03-23T15:09:52&#43;0300 />
+    <meta property="article:published_time" content=2023-03-23T15:09:52&#43;0300 />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Mutable and Immutable in Java",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2023-03-23",
+        "description": "",
+        "wordCount":  1129 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2023-03-23",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Baris\u0027 Personal Blog"
+        }
+    }
+    </script>
+
+  <meta name="generator" content="Hugo 0.111.1">
+
+  
+  <link rel="canonical" href="https://bayten.dev/posts/mutable-and-immutable-in-java/"><link href="/sass/main.min.5c3526dbfd0864d88f74bed943d6f70206ba385a17901d9d96b534b398530649.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet"></head><body data-theme = "dark" class="notransition">
+<script src="https://bayten.dev/js/themeLoader.min.4e9e1a253d543bbfec02e7f2460d9621e719fd739dc8a5256faa91cda6e12e03.js"></script><div class="navbar" role="navigation">
+  <nav class="menu" aria-label="Main Navigation">
+    <a href="/" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+    </a>
+    <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+    <label for="menu-trigger">
+      <span class="menu-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+      </span>
+    </label>
+
+    <div class="trigger">
+      <ul class="trigger-container">
+        
+        
+          <li>
+            <a 
+            class="menu-link "
+            href="/">
+            Home
+            </a>
+            
+          </li>
+        
+          <li>
+            <a 
+            class="menu-link active"
+            href="/posts/">
+            Posts
+            </a>
+            
+          </li>
+        
+          <li>
+            <a 
+            class="menu-link "
+            href="/about/">
+            About
+            </a>
+            
+          </li>
+        
+        <li class="menu-separator">
+          <span>|</span>
+        </li>
+      </ul>
+      <a id="mode" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Mutable and Immutable in Java</h1>
+                
+                <div class="post-meta">
+                    <time datetime="2023-03-23T15:09:52&#43;03:00" itemprop="datePublished"> Mar 23, 2023 </time>
+                </div>
+            </header>
+            <div class="page-content">
+                <p><img src="https://i.hizliresim.com/cz7056q.png" alt=""></p>
+<p>Hello Folks 🖖🏼,</p>
+<p>The topic of this article will be about the concept of Mutablity and Immutablity in Java. I will try to answer questions such as <strong>&ldquo;What does Mutable &amp; Immutable mean?&rdquo;</strong>, &ldquo;<strong>What is the logic behind this functionality?</strong>&rdquo;, &ldquo;<strong>How are Mutable or Immutable classes created?</strong>&rdquo;, &ldquo;<strong>What are the advantages and disadvantages?</strong>&rdquo;.</p>
+<p>Let&rsquo;s dive right in and explore these fascinating concepts together. 🚀</p>
+<h2 id="1-mutable-classes"><strong>1. Mutable Classes</strong></h2>
+<p>Mutable objects are objects that <strong>can be modified after they are initialized</strong>. In some cases, these types of classes can be preferred over immutable classes due to their flexibility and mutable fields.</p>
+<p>Examples of these classes include <strong>StringBuffer</strong>, <strong>StringBuilder</strong>, and the <strong>Date</strong> class found in the Java util package. To further clarify what I mean, let me provide a short code example.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Initialize variable called myString
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">StringBuilder</span> <span class="n">myString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">(</span><span class="s">&#34;Hello&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//and manipulate it
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">myString</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34; Word&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myString</span><span class="o">);</span> <span class="c1">// Hello World
+</span></span></span></code></pre></div><p>In fact, those who are not familiar with the topic may be a little surprised. They might say, &lsquo;<em><strong>I can already do this in any variable I want, can&rsquo;t I?</strong></em>&rsquo; Our friends will be able to grasp the underlying logic more clearly when we delve into the details of the topic and the immutable part 🙂</p>
+<p>When a change is made in mutable classes, the change is made on the same field <strong>without creating a new space in memory</strong> (the situation is the opposite in immutables 🙂). In fact, the logic behind mutable classes is that they have a <strong>set()</strong> method that we call a <strong>setter</strong>.</p>
+<p>However, <strong>being changeable</strong> is not always a good thing for us, as it can cause some side effects&hellip;</p>
+<p>For example, using mutable classes in threaded operations can sometimes cause problems for us. <strong>When two execution threads try to access and change a mutable value at the same time, a situation may arise where one overrides the other</strong>. Therefore, we should be careful when using mutable classes.</p>
+<p>We mentioned that there are mutable classes that already come with Java. So how would we create our own if we wanted to?</p>
+<p>I&rsquo;ll try to explain this with a short code.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MutableClass</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="kt">int</span> <span class="n">mutableField1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="n">String</span> <span class="n">mutableField2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="nf">MutableClass</span><span class="o">(</span><span class="kt">int</span> <span class="n">fld1</span><span class="o">,</span> <span class="n">String</span> <span class="n">fld2</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">mutableField1</span> <span class="o">=</span> <span class="n">fld1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">mutableField2</span> <span class="o">=</span> <span class="n">fld2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getMutableField1</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">mutableField1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMutableField1</span><span class="o">(</span><span class="kt">int</span> <span class="n">mutableField1</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">mutableField1</span> <span class="o">=</span> <span class="n">mutableField1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="n">String</span> <span class="nf">getMutableField2</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">mutableField2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMutableField2</span><span class="o">(</span><span class="n">String</span> <span class="n">mutableField2</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">mutableField2</span> <span class="o">=</span> <span class="n">mutableField2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>In this example, we defined the class fields as mutable. Additionally, we created two setter methods, <strong>setMutableField1()</strong> and <strong>setMutableField2()</strong>, for each field to enable us to change their values. This way, <strong>the fields of this class can be modified as desired after the initial use</strong>.</p>
+<p>🌟<strong>In summary</strong>,</p>
+<ul>
+<li>Mutable objects are ones that <strong>can be changed without creating a new object in memory</strong>.</li>
+<li>They have a <strong>setter method</strong> in their class.</li>
+<li>They may cause disadvantages in threaded operations due to <strong>race conditions</strong>.</li>
+</ul>
+<h2 id="2immutable"><strong>2.Immutable</strong></h2>
+<p>In fact, in this concept, the opposite of the situations explained above is present. <strong>Once an immutable object is initialized, we cannot change its value</strong>. Examples of these objects include <strong>primitive types</strong>, <strong>Wrapper Classes</strong>, <strong>Legacy classes</strong> <a href="https://www.javatpoint.com/legacy-class-in-java">(what!?)</a>, and the <strong>String</strong> class. As an example, readers can refer to my blog post &ldquo;<a href="https://bayten.dev/posts/string-stringbuilder-and-stringbuffer-in-java/">String, StringBuilder, and StringBuffer in Java</a>&rdquo; where I discussed the implications of being mutable or immutable for these three
+classes.</p>
+<p>In immutable classes, unlike mutable classes, only <strong>Getter methods are present</strong>. When a change is desired in these classes, <strong>a new area is created in memory and the manipulated version of the variable is stored in this new area</strong>. This creates <strong>unnecessary memory usage</strong> as a new area is constantly created for each manipulation, making immutable classes slower in terms of performance compared to mutable classes.</p>
+<p>Another difference from mutable classes is that <strong>they are safer in threaded processes since they are immutable and cannot be changed</strong>.</p>
+<p>So, what should we do if we want to create an immutable class? Let&rsquo;s take a look:</p>
+<ul>
+<li>We can define the class as <strong>final</strong>.</li>
+<li>We can define the variables that will be used in the class as final and assign their initial values through the <strong>constructor method.</strong> Therefore, since these fields are final and have initial values, they will give an error if they are attempted to be changed.</li>
+<li>We do not use the <strong>Setter</strong> method.</li>
+</ul>
+<p>Let&rsquo;s now show all that has been explained in the code. In fact, let&rsquo;s try to make the &ldquo;<strong>MutableClass</strong>&rdquo; that we created above immutable now.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">ImmutableClass</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">immutableField1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">immutableField2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="nf">ImmutableClass</span><span class="o">(</span><span class="kt">int</span> <span class="n">fld1</span><span class="o">,</span> <span class="n">String</span> <span class="n">fld2</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">immutableField1</span> <span class="o">=</span> <span class="n">fld1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">immutableField2</span> <span class="o">=</span> <span class="n">fld2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getImmutableField1</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">immutableField1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="n">String</span> <span class="nf">getImmutableField2</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">immutableField2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>In the code I wrote above, we declared the fields of the class as <strong>final</strong> and assigned <strong>their initial values in the constructor</strong>, making it immutable. Additionally, since we do not have any <strong>setter methods</strong>, the fields of this class cannot be accessed and assigned any value.</p>
+<p>To summarize the whole topic and make a comparative analysis, we can create a table as follows, from start to finish.</p>
+<table>
+<thead>
+<tr>
+<th>Mutable</th>
+<th>Immutable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>We can change the value of mutable objects <strong>after initialization</strong>.</td>
+<td>Once an immutable object is initiated; <strong>We can not change its values</strong>.</td>
+</tr>
+<tr>
+<td>The state can be changed.</td>
+<td>The state can not be changed.</td>
+</tr>
+<tr>
+<td>In mutable objects, <strong>no new objects are formed</strong>.</td>
+<td>In immutable objects, <strong>a new object is formed when the value of the object is altered.</strong></td>
+</tr>
+<tr>
+<td>It provides <strong>methods to change the object.</strong></td>
+<td>It does <strong>not provide any method to change the object value.</strong></td>
+</tr>
+<tr>
+<td>It supports <strong>get() and set() methods</strong> to dela with the object.</td>
+<td>It only supports <strong>get()</strong> method to pass the value of the object.</td>
+</tr>
+<tr>
+<td>Mutable classes are <strong>may or may not be thread-safe.</strong></td>
+<td>Immutable classes <strong>are thread-safe.</strong></td>
+</tr>
+<tr>
+<td>The essentials for creating a mutable class are methods for <strong>modifying fields, getters and setters.</strong></td>
+<td>The essentials for creating an immutable class are <strong>final class, private fields, final mutable objects</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>In conclusion</strong>🌟,</p>
+<p>the use of Mutable and Immutable classes in Java is important for software developers to <strong>improve code quality, minimize errors, and optimize performance</strong>. While the use of Mutable classes can be <strong>advantageous in terms of flexibility and customization, their misuse can lead to program errors</strong>.</p>
+<p>The use of Immutable classes is <strong>ideal for writing safe and shareable code, but in some cases, they may be disadvantaged in terms of performance.</strong> By choosing the right class types according to the needs of the application, programmers can improve code quality and create more secure, scalable, and performant applications.
+ </p>
+<p>If you have taken the time to read this far, thank you very much. If you notice any mistakes, please feel free to contact me via email.</p>
+<p>Happy coding! 🎉</p>
+
+            </div>
+        </article>
+    </main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> © 2023 Baris Ayten🖖🏼 </span>
+</footer>
+<script src="https://bayten.dev/js/themeSwitchnMenu.min.2a402288242b6930b175a0722c267e2353055739b3975834df35e56d00dd8f50.js"></script></body>
+</html>
