@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">[ENG] Method Overriding and Overloading in Java | Baris&#39; Personal Blog</title>
+<meta property="og:title" content="[ENG] Method Overriding and Overloading in Java | Baris&#39; Personal Blog" />
+<meta name="twitter:title" content="[ENG] Method Overriding and Overloading in Java | Baris&#39; Personal Blog" />
+<meta itemprop="name" content="[ENG] Method Overriding and Overloading in Java | Baris&#39; Personal Blog" />
+<meta name="application-name" content="[ENG] Method Overriding and Overloading in Java | Baris&#39; Personal Blog" />
+<meta property="og:site_name" content="Awesome hugo blog" />
+
+<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
+<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+
+
+  <meta itemprop="image" content="https://bayten.dev/" />
+  <meta property="og:image" content="https://bayten.dev/" />
+  <meta name="twitter:image" content="https://bayten.dev/" />
+  <meta name="twitter:image:src" content="https://bayten.dev/" />
+
+
+
+
+    
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2023-04-01T09:17:50&#43;0300 />
+    <meta property="article:published_time" content=2023-04-01T09:17:50&#43;0300 />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "[ENG] Method Overriding and Overloading in Java",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2023-04-01",
+        "description": "",
+        "wordCount":  1577 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2023-04-01",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Baris\u0027 Personal Blog"
+        }
+    }
+    </script>
+
+  <meta name="generator" content="Hugo 0.111.1">
+
+  
+  <link rel="canonical" href="https://bayten.dev/posts/method-overriding-and-overloading-in-java/"><link href="/sass/main.min.5c3526dbfd0864d88f74bed943d6f70206ba385a17901d9d96b534b398530649.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet"></head><body data-theme = "dark" class="notransition">
+<script src="https://bayten.dev/js/themeLoader.min.4e9e1a253d543bbfec02e7f2460d9621e719fd739dc8a5256faa91cda6e12e03.js"></script><div class="navbar" role="navigation">
+  <nav class="menu" aria-label="Main Navigation">
+    <a href="/" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+    </a>
+    <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+    <label for="menu-trigger">
+      <span class="menu-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+      </span>
+    </label>
+
+    <div class="trigger">
+      <ul class="trigger-container">
+        
+        
+          <li>
+            <a 
+            class="menu-link "
+            href="/">
+            Home
+            </a>
+            
+          </li>
+        
+          <li>
+            <a 
+            class="menu-link active"
+            href="/posts/">
+            Posts
+            </a>
+            
+          </li>
+        
+          <li>
+            <a 
+            class="menu-link "
+            href="/about/">
+            About
+            </a>
+            
+          </li>
+        
+        <li class="menu-separator">
+          <span>|</span>
+        </li>
+      </ul>
+      <a id="mode" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">[ENG] Method Overriding and Overloading in Java</h1>
+                
+                <div class="post-meta">
+                    <time datetime="2023-04-01T09:17:50&#43;03:00" itemprop="datePublished"> Apr 1, 2023 </time>
+                </div>
+            </header>
+            <div class="page-content">
+                <p><img src="https://i.hizliresim.com/1wc3v6p.png" alt=""></p>
+<p>Hello everyone 🤘🏼</p>
+<p>In this article, we&rsquo;ll be taking a look at the concepts of method <strong>overloading</strong> and <strong>overriding</strong> in Java, which I believe are often forgotten and confused by beginners (at least I was 😁).</p>
+<p>Before delving into these two concepts in detail, I&rsquo;d like to briefly mention them. Method overriding is simply changing the functionality of a method without changing its signature, while method overloading is redefining a method with a different signature.</p>
+<blockquote>
+<p>These two definitions may not make much sense yet because I have only mentioned them briefly and in a simplistic manner. Although this section consists of only two sentences that may seem meaningless for now, by the end of the article, they will have the power to summarize the entire article. 🙂</p>
+</blockquote>
+<p>Before we dive into the topic fully, there is one tiny concept we need to learn and understand: <strong>The Method Signature</strong>. Method signatures consist of the name of a method and its method parameters. As shown in the image below, the signature of the method named <code>justFun</code> consists of its name &ldquo;justFun&rdquo; and its parameters <code>int num1</code>,  <code>int num2</code>.</p>
+<p><img src="https://i.hizliresim.com/9zxpi7n.jpg" alt=""></p>
+<p>I believe we have clarified this simple and short concept. Now, let&rsquo;s dive into the main concepts of this article. 🚀</p>
+<h1 id="method-overriding"><strong>Method Overriding</strong></h1>
+<p>Method overriding, in simple terms, refers to methods that <strong>have the same signature but perform different tasks</strong>. How does this situation arise?</p>
+<p>Let&rsquo;s assume that we have a class named <code>Animal</code> with a method named <code>eat()</code>. Now, I have created another class named <code>Dog</code>, and I want it to inherit from the <code>Animal</code> class. When we perform the inheritance process, we would like to use the <code>eat()</code> method inherited from the super class in a way that is suitable for our subclass. Therefore, <strong>we change its functionality</strong>. In other words, we override the <code>eat()</code> method.🙂</p>
+<p>Let&rsquo;s give an example!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Animal</span><span class="o">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">(){</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;eating...&#34;</span><span class="o">);}</span>  
+</span></span><span class="line"><span class="cl"><span class="o">}</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//Overriding way
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span><span class="o">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">(){</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;eating bread...&#34;</span><span class="o">);}</span>  
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="n">Animal</span><span class="o">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">(){</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;eating fish...&#34;</span><span class="o">);}</span>  
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>As we saw in the example, I did not touch the method signatures in any way. I did not change the method name or send a new parameter to that method&hellip; <strong>I just played with the internal dynamics of the method and added a completely different functionality.</strong></p>
+<p>Well, you may have a question like this in your mind🤔:</p>
+<blockquote>
+<h3 id="what-about-the-access-modifiers-of-the-methods-we-override-do-they-have-to-be-the-same"><em><strong>&ldquo;What about the access modifiers of the methods we override? Do they have to be the same?&rdquo;</strong></em></h3>
+</blockquote>
+<p>Our answer to this question will be <strong>no</strong>. They do not have to be the same, <strong>but
+the access modifier of the overriding method must be the same or less restrictive than the original method.</strong></p>
+<p><img src="https://i.hizliresim.com/nzibmem.jpg" alt=""></p>
+<p>According to the restriction diagram in the image, if a <code>protected</code> method is to be overridden, <strong>its access modifier cannot be default or private</strong>. It can either remain <code>protected</code> or be made <code>public</code>. In short, when overriding a method, <strong>the access modifier in the subclass must be the same as or less restrictive than that in the superclass.</strong></p>
+<p>Another question that might come up is❓,</p>
+<blockquote>
+<h3 id="do-the-return-types-of-the-methods-we-override-have-to-be-the-same-cant-i-specify-a-different-return-type">&ldquo;Do the return types of the methods we override have to be the same? Can&rsquo;t I specify a different return type?&rdquo;</h3>
+</blockquote>
+<p>Our answer to this question <strong>will be No</strong> 🙂. When overriding a method, <strong>the return type of the method must remain the same, along with the method signature</strong>. This is primarily based on Java&rsquo;s principle of type safety.</p>
+<p>If a subclass could use a different return type while overriding methods of the superclass, it could lead to errors in places where the superclass is used.</p>
+<p>However, there is an exception to this rule where <strong>the return type of the overridden method can be a co-variant return type</strong>. For example, suppose the return type of a superclass is <code>Animal</code>, and the return type of the subclass is <code>Cat</code>. While overriding the superclass method, the subclass can specify the return type as <code>Cat</code>. This way, the object returned by the subclass will not be of type <code>Animal</code>, but of a more specific subtype, which is <code>Cat</code>.</p>
+<p>Another question that could arise is,</p>
+<blockquote>
+<h3 id="can-i-override-every-method">&ldquo;Can I override every method?&rdquo;</h3>
+</blockquote>
+<p>It may be the most fundamental question to ask. 🙂</p>
+<p>Our answer to this question, unfortunately, will still be No. 😁</p>
+<p>If the method to be overridden is:</p>
+<ul>
+<li><em><strong>final</strong></em></li>
+<li><em><strong>static</strong></em></li>
+<li><em><strong>private</strong></em></li>
+</ul>
+<p>then we cannot override these methods. This is because <strong>the nature of the override operation is based on inheritance</strong>. Methods with these three keywords cannot be inherited, so they cannot be overridden either.</p>
+<p>However, sometimes a subclass can redefine a static method of the superclass. Some of us might have seen this situation before. This is not an override but is called <strong>Method Hiding.</strong></p>
+<p>If we summarize the process of overriding;</p>
+<ul>
+<li>
+<p>After the override process, the method signature remains the same (method name and parameters must stay the same), only the functionality of the method changes.</p>
+</li>
+<li>
+<p>The return type of the overridden method should not change or it should be a co-variant return type.</p>
+</li>
+<li>
+<p>The access modifier of the overridden method should be the same or less restrictive than the original method.</p>
+</li>
+<li>
+<p><code>private</code>, <code>static</code>, <code>final</code> methods cannot be overridden.</p>
+</li>
+</ul>
+<p>Now that we have gained a general understanding and logic about overriding, let&rsquo;s take a look at the concept of overloading.</p>
+<h1 id="method-overloading"><strong>Method Overloading</strong></h1>
+<p>Method Overloading is <strong>the redefinition of a method with the same name but different parameters</strong>. This means that the parameter section of the method signature is changed. This allows for the creation of different methods that perform the same task but with different parameter types, which can be called independently.</p>
+<p>Let&rsquo;s try to clarify the situation with some short code examples,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calculator</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">summation</span><span class="o">(</span><span class="kt">int</span> <span class="n">num1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">num2</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">summation</span><span class="o">(</span><span class="kt">int</span> <span class="n">num1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">num2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">num3</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span> <span class="o">+</span> <span class="n">num3</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Calculator</span> <span class="n">calc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calculator</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">result1</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="na">summation</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">result2</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="na">summation</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Summation of 2 and 3: &#34;</span> <span class="o">+</span> <span class="n">result1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Summation of 2, 3 and 4:  &#34;</span> <span class="o">+</span> <span class="n">result2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>In the example above, we defined two different methods with the name <code>summation()</code> inside the <code>Calculator</code> class, where the first method takes <strong>two integer parameters</strong>, and the second method takes <strong>three integer parameters</strong>. In the main method, we call both methods with different parameters and print the result to the screen.</p>
+<p>Let&rsquo;s take a look at another example to reinforce our understanding.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">greet</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">greet</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&#34;!&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">HelloWorld</span> <span class="n">helloWorld</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HelloWorld</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">helloWorld</span><span class="o">.</span><span class="na">greet</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">helloWorld</span><span class="o">.</span><span class="na">greet</span><span class="o">(</span><span class="s">&#34;John&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>In the example above, the <code>HelloWorld</code> class defines two different methods named <code>greet()</code>.</p>
+<p>The first method is a simple greeting method that takes <strong>no parameters</strong> and prints the message <em>&ldquo;Hello, world!&rdquo;</em>. The second method takes <strong>a parameter of type String</strong> and uses it to create a customized greeting message. Both methods are called in the main method and their results are printed to the console.</p>
+<p>Okey, now that we have gone through the examples, I think we have some understanding about method overloading. Let&rsquo;s delve into some details about overloading using the same questions we used for understanding override.</p>
+<p>Then our first question is as follows🎇</p>
+<blockquote>
+<h3 id="when-overriding-a-method-we-had-to-carefully-choose-the-access-modifier-that-is-we-had-to-either-use-the-same-access-modifier-as-the-previous-method-or-a-less-restrictive-one-is-this-also-true-for-overloading">&ldquo;When overriding a method, we had to carefully choose the Access Modifier. That is, we had to either use the same Access Modifier as the previous method or a less restrictive one. Is this also true for Overloading?&rdquo;</h3>
+</blockquote>
+<p>Our answer should be no 🙂</p>
+<p>The logic here is different from overriding. Access modifier selection was important for overriding because inheritance played a leading role. However, in overloading, <strong>we have no constraints and we are completely free to choose any modifier we want.</strong></p>
+<p>As in the example below,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">int</span> <span class="nf">sum</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">,</span> <span class="kt">int</span> <span class="n">c</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">sum</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&#34;Nothing to sum&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></div><p>And for our another question,</p>
+<blockquote>
+<h3 id="the-return-types-of-the-methods-we-override-must-be-the-same-or-a-co-variant-type-how-does-this-work-in-overloading">&ldquo;The return types of the methods we override must be the same or a co-variant type. How does this work in Overloading?&rdquo;</h3>
+</blockquote>
+<p>Actually, we have already demonstrated this situation in the example we provided earlier. The return type is not important in Overloading. It can be the same or different.</p>
+<blockquote>
+<h3 id="can-i-overload-every-method">&ldquo;Can I overload every method?&rdquo;</h3>
+</blockquote>
+<p>The answer to this question should be yes 🙂 There is no problem with overloading a method that is <code>private</code>, <code>static</code>, or <code>final</code>.</p>
+<p>Let&rsquo;s reinforce this situation with the example below.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;doSomething with int: &#34;</span> <span class="o">+</span> <span class="n">x</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">(</span><span class="kt">double</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;doSomething with double: &#34;</span> <span class="o">+</span> <span class="n">x</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">(</span><span class="n">String</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;doSomething with String: &#34;</span> <span class="o">+</span> <span class="n">x</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>If we summarize the overloading process in short points;</p>
+<ul>
+<li>
+<p>After the overloading process, <strong>the method signature changes (method name remains the same, method parameters change).</strong></p>
+</li>
+<li>
+<p>The return type of the overloaded method can <strong>remain the same or be different.</strong></p>
+</li>
+<li>
+<p>The access modifier of the overloaded method can remain the same or be different.
+<code>private</code>, <code>static</code>, <code>final</code> methods can also be overloaded, there is no restriction.</p>
+</li>
+</ul>
+<p>If we&rsquo;ve made it this far understanding, I believe we have an idea about the concepts of Overloading and Overriding. This has been a compilation of what I&rsquo;ve learned and researched about Override and Overload. Thank you for taking the time to read this far.</p>
+<p>Happy Coding! 🤞🏼</p>
+
+            </div>
+        </article>
+    </main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> © 2023 Baris Ayten🖖🏼 </span>
+</footer>
+<script src="https://bayten.dev/js/themeSwitchnMenu.min.2a402288242b6930b175a0722c267e2353055739b3975834df35e56d00dd8f50.js"></script></body>
+</html>
