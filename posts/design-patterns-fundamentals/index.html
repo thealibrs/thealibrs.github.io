@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Design Patterns | Fundamentals | Baris&#39; Personal Blog</title>
+<meta property="og:title" content="Design Patterns | Fundamentals | Baris&#39; Personal Blog" />
+<meta name="twitter:title" content="Design Patterns | Fundamentals | Baris&#39; Personal Blog" />
+<meta itemprop="name" content="Design Patterns | Fundamentals | Baris&#39; Personal Blog" />
+<meta name="application-name" content="Design Patterns | Fundamentals | Baris&#39; Personal Blog" />
+<meta property="og:site_name" content="Awesome hugo blog" />
+
+<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
+<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+
+
+  <meta itemprop="image" content="https://bayten.dev/" />
+  <meta property="og:image" content="https://bayten.dev/" />
+  <meta name="twitter:image" content="https://bayten.dev/" />
+  <meta name="twitter:image:src" content="https://bayten.dev/" />
+
+
+
+
+    
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2023-05-13T12:00:45&#43;0300 />
+    <meta property="article:published_time" content=2023-05-13T12:00:45&#43;0300 />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Design Patterns | Fundamentals",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2023-05-13",
+        "description": "",
+        "wordCount":  1296 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2023-05-13",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Baris\u0027 Personal Blog"
+        }
+    }
+    </script>
+
+  <meta name="generator" content="Hugo 0.111.1">
+
+  
+  <link rel="canonical" href="https://bayten.dev/posts/design-patterns-fundamentals/"><link href="/sass/main.min.5c3526dbfd0864d88f74bed943d6f70206ba385a17901d9d96b534b398530649.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet"></head><body data-theme = "dark" class="notransition">
+<script src="https://bayten.dev/js/themeLoader.min.4e9e1a253d543bbfec02e7f2460d9621e719fd739dc8a5256faa91cda6e12e03.js"></script><div class="navbar" role="navigation">
+  <nav class="menu" aria-label="Main Navigation">
+    <a href="/" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+    </a>
+    <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+    <label for="menu-trigger">
+      <span class="menu-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+      </span>
+    </label>
+
+    <div class="trigger">
+      <ul class="trigger-container">
+        
+        
+          <li>
+            <a 
+            class="menu-link "
+            href="/">
+            Home
+            </a>
+            
+          </li>
+        
+          <li>
+            <a 
+            class="menu-link active"
+            href="/posts/">
+            Posts
+            </a>
+            
+          </li>
+        
+          <li>
+            <a 
+            class="menu-link "
+            href="/about/">
+            About
+            </a>
+            
+          </li>
+        
+        <li class="menu-separator">
+          <span>|</span>
+        </li>
+      </ul>
+      <a id="mode" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Design Patterns | Fundamentals</h1>
+                
+                <div class="post-meta">
+                    <time datetime="2023-05-13T12:00:45&#43;03:00" itemprop="datePublished"> May 13, 2023 </time>
+                </div>
+            </header>
+            <div class="page-content">
+                <p><img src="https://i.hizliresim.com/mqjrwqm.png" alt=""></p>
+<p>Hello Folks! 🖖🏼</p>
+<p>I&rsquo;ve decided to embark on a new article series, and I&rsquo;m going to tackle <strong>Design Patterns</strong>. Combining the notes I&rsquo;ve taken from the articles I&rsquo;ve read and watched while learning Design Patterns, I&rsquo;ve decided to create a perpetual resource on my blog.</p>
+<p>I&rsquo;m planning to divide this article series into <strong>four parts</strong>, where I&rsquo;ll delve into each category and pattern in detail, accompanied by examples. Throughout the examples, <strong>I&rsquo;ll be using Java as the programming language</strong>.</p>
+<p>The article series will progress in the following order, as I anticipate:</p>
+<ol>
+<li><strong>Design Pattern Fundamentals</strong></li>
+<li><strong>Creational Design Patterns</strong></li>
+<li><strong>Structural Design Patterns</strong></li>
+<li><strong>Behavioral Design Patterns</strong></li>
+</ol>
+<p>We&rsquo;ll start with this article to provide <strong>a nice introduction and gain a general overview and understanding of Design Pattern concepts</strong>. In the subsequent articles, we&rsquo;ll meticulously delve into each remaining part separately.</p>
+<p>Without further ado, let&rsquo;s dive into our first topic! 🤘🏼</p>
+<hr>
+<p> </p>
+<p>Design Patterns, in the realm of software development, hold a significant place as the cool-sounding name for a set of standardized software designs that developers employ to <strong>tackle recurring problems, create more flexible, sustainable, and reusable code in their projects</strong>.</p>
+<p>These designs, comprising numerous different patterns, are categorized into <strong>three distinct groups based on their usage and purposes, as outlined below</strong>.</p>
+<p><img src="https://i.hizliresim.com/mcj2eek.png" alt=""></p>
+<p>Let&rsquo;s now roughly delve into the realm of <strong>Creational Design Patterns</strong>, which will be one of the pillars of our article series, and try to grasp what they are all about.🎉</p>
+<h1 id="creational-design-patterns">Creational Design Patterns</h1>
+<p>Creational Design Patterns encompass a category of design patterns that <strong>revolve around the process of creating new objects</strong>. In this category, the patterns focus on <strong>how an object can be created in a flexible and reusable manner</strong>.</p>
+<blockquote>
+<p><em>“In software engineering, creational design patterns are design patterns that deal with <strong>object creation mechanisms, trying to create objects in a manner suitable to the situation.</strong> The basic form of object creation could result in design problems or added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.”</em> (1)</p>
+</blockquote>
+<p>We&rsquo;ve covered it quite extensively in the previous lines, but if we were to highlight them in bullet points, these design patterns address the following concerns:</p>
+<ul>
+<li>How objects are created.</li>
+<li>Managing the processes involved in creating large and complex objects.</li>
+<li>Defining the requirements during the creation of objects.</li>
+<li>Determining which objects to use in the object&rsquo;s creation.</li>
+</ul>
+<p>Within this category, we&rsquo;ll explore 6 different patterns. Now, let&rsquo;s take a quick peek at them.🧐</p>
+<p><img src="https://i.hizliresim.com/2c8qm70.png" alt=""></p>
+<ul>
+<li><strong>Singleton Pattern</strong>: It is used to design a class with only one instance.</li>
+<li><strong>Factory Method Pattern</strong>: It allows subclasses to use the interface of the parent class to create objects.</li>
+<li><strong>Abstract Factory Pattern</strong>: It enables the creation of objects in a group that are related to each other.</li>
+<li><strong>Builder Pattern</strong>: It allows the step-by-step construction of complex objects.</li>
+<li><strong>Prototype Pattern</strong>: It is used to create copies of objects.</li>
+</ul>
+<p>As mentioned at the beginning of the article, we briefly covered each pattern. Now, let&rsquo;s take a look at our next category, <strong>Structural Design Patterns</strong>. 🐱‍🏍</p>
+<h1 id="structural-design-patterns">Structural Design Patterns</h1>
+<p>The patterns within this category determine how the different components of software will:</p>
+<ul>
+<li>How came together,</li>
+<li>How be organized, and</li>
+<li>How interact with each other.</li>
+</ul>
+<p>These design patterns are in line with the principles of <strong>object-oriented programming (OOP) and help optimize the interaction between the various components of the software</strong>.</p>
+<blockquote>
+<p><em>Structural design patterns explain <strong>how to assemble objects and classes into larger structures, while keeping these structures flexible and efficient.</strong></em> (2)</p>
+</blockquote>
+<p>Structural Design Patterns allow for <strong>easier understanding and more convenient maintenance of the code and the resulting structure</strong>. These design patterns, especially during the development of large and complex software, provide developers with <strong>opportunities to better organize and reuse their code</strong>.</p>
+<p>Within the <strong>Structural Pattern</strong> category, there are 7 different design patterns.</p>
+<p>These include:</p>
+<p><img src="https://i.hizliresim.com/h4yzy0i.png" alt=""></p>
+<ul>
+<li><strong>Adapter Pattern</strong>: It is a structural design pattern that enables two classes with different interfaces to work together harmoniously.</li>
+<li><strong>Bridge Pattern</strong>: It is a design pattern that separates the abstraction and implementation, allowing them to vary independently.</li>
+<li><strong>Composite Pattern</strong>: It is a design pattern that creates objects in a hierarchical structure, enabling operations to be performed on the entire structure instead of individually handling each object.</li>
+<li><strong>Decorator Pattern</strong>: It is a structural design pattern that dynamically adds new features to an existing object.</li>
+<li><strong>Facade Pattern:</strong> It is a design pattern that simplifies a complex system by providing an interface for clients to interact with, making it easier for clients to use the system.</li>
+<li><strong>Flyweight Pattern:</strong> It is a design pattern that prevents the repeated creation of similar objects, thereby improving system performance.</li>
+<li><strong>Proxy Pattern:</strong> It is a design pattern that acts as a substitute for an object and controls access to that object.</li>
+</ul>
+<p>Up until now, we have gained some understanding about two different categories and the 12 design patterns within them. At least now we&rsquo;re not completely clueless! 😁</p>
+<p>Now, let&rsquo;s take a look at our final guest of this article, <strong>Behavioral Design Patterns</strong>.</p>
+<h1 id="behavioral-design-patterns">Behavioral Design Patterns</h1>
+<p>Our friends in this design pattern category actually have similar goals. They assist in <strong>organizing interactions and responsibilities among objects</strong>.</p>
+<p>Let&rsquo;s dive into the various <strong>Behavioral Design Patterns</strong> and explore their roles.</p>
+<blockquote>
+<p><em>Behavioral design patterns are concerned with algorithms and the assignment of responsibilities between objects.</em> (3)</p>
+</blockquote>
+<p>These patterns help <strong>make object behaviors more flexible and cohesive</strong>. They are used to <strong>facilitate easier maintenance and development of software</strong>.</p>
+<p>Here are some important <strong>Behavioral Design Patterns</strong>:</p>
+<p><img src="https://i.hizliresim.com/bdhl2z7.png" alt=""></p>
+<ul>
+<li><strong>Observer Pattern</strong>: Establishes a relationship between objects, enabling automatic updates to dependent objects when one object changes.</li>
+<li><strong>Command Pattern:</strong> Encapsulates a command-containing class, allowing separation of objects responsible for executing and parameterizing the command. This enables different ways of invoking and undoing the command.</li>
+<li><strong>Iterator Pattern</strong>: Provides an interface for accessing elements of a collection sequentially, ensuring the access method remains consistent even if the collection&rsquo;s structure changes.</li>
+<li><strong>Template Method Pattern:</strong> Defines the steps of a process and allows subclasses to implement these steps as desired.</li>
+<li><strong>Strategy Pattern:</strong> Encapsulates a class containing an algorithm, enabling different objects to apply the algorithm. This allows the algorithm to be applied in different ways and changed at runtime.</li>
+<li><strong>Chain of Responsibility Pattern:</strong> Creates a chain of objects where each object is responsible for handling a specific request. The request is passed along the chain until it is handled.</li>
+<li><strong>State Pattern:</strong> Used to manage an object&rsquo;s state and change its behavior based on the current state.</li>
+<li><strong>Interpreter Pattern:</strong> Provides an object structure for interpreting a specific part of a language and interpreting the data accordingly.</li>
+<li><strong>Mediator Pattern:</strong> Instead of direct communication between objects, it uses a mediator object to facilitate communication and maintain independence among objects.</li>
+<li><strong>Visitor Pattern:</strong> Provides an interface for accessing elements in an object structure and allows different objects to perform different operations on these elements.</li>
+</ul>
+<p>These patterns <strong>contribute to creating more flexible and maintainable software systems by defining clear interactions and responsibilities among objects</strong>.</p>
+<p>So far, let&rsquo;s summarize it. We have three different categories of patterns at our disposal. These are:</p>
+<ul>
+<li><strong>Creational</strong></li>
+<li><strong>Structural</strong></li>
+<li><strong>Behavioral</strong></li>
+</ul>
+<p>And each of these categories focuses on a different mechanism.</p>
+<ul>
+<li>Creational Patterns <strong>deal with the creation of objects</strong>.</li>
+<li>Structural Patterns address <strong>how objects will come together and be organized once they are created</strong>.</li>
+<li>Behavioral Patterns allow us to <strong>make adjustments regarding interactions and responsibilities among objects.</strong></li>
+</ul>
+<hr>
+<p>Thank you for taking the time to read through it. If you notice any missing or incorrect points, please feel free to let me know, and I&rsquo;ll be happy to make the necessary corrections. I hope that the notes I have gathered here will be of some use to you and contribute to your work, even if it&rsquo;s in a small way</p>
+<p>Thank you for taking the time to read this far. ♥</p>
+<p>Happy Coding 🖖🏼</p>
+<h1 id="references">References</h1>
+<ul>
+<li>Design Patterns. <a href="https://sourcemaking.com/design_patterns">https://sourcemaking.com/design_patterns</a> (1),(2)</li>
+<li>Tasarım Desenleri, <a href="https://yusufyilmazfr.gitbook.io/tasarim-desenleri-turkce-kaynak/tasarim-desenleri/tasarim-deseni-nedir">https://yusufyilmazfr.gitbook.io/tasarim-desenleri-turkce-kaynak/tasarim-desenleri/tasarim-deseni-nedir</a></li>
+</ul>
+
+            </div>
+        </article>
+    </main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> © 2023 Baris Ayten🖖🏼 </span>
+</footer>
+<script src="https://bayten.dev/js/themeSwitchnMenu.min.2a402288242b6930b175a0722c267e2353055739b3975834df35e56d00dd8f50.js"></script></body>
+</html>
