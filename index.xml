@@ -6,18 +6,7 @@
     <description>Recent content in Home on Baris&#39; Personal Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 May 2023 12:00:45 +0300</lastBuildDate><atom:link href="https://bayten.dev/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Design Patterns | Fundamentals</title>
-      <link>https://bayten.dev/posts/design-patterns-fundamentals/</link>
-      <pubDate>Sat, 13 May 2023 12:00:45 +0300</pubDate>
-      
-      <guid>https://bayten.dev/posts/design-patterns-fundamentals/</guid>
-      <description>Hello Folks! 🖖🏼
-I&amp;rsquo;ve decided to embark on a new article series, and I&amp;rsquo;m going to tackle Design Patterns. Combining the notes I&amp;rsquo;ve taken from the articles I&amp;rsquo;ve read and watched while learning Design Patterns, I&amp;rsquo;ve decided to create a perpetual resource on my blog.
-I&amp;rsquo;m planning to divide this article series into four parts, where I&amp;rsquo;ll delve into each category and pattern in detail, accompanied by examples. Throughout the examples, I&amp;rsquo;ll be using Java as the programming language.</description>
-    </item>
-    
+    <lastBuildDate>Sun, 16 Apr 2023 14:46:53 +0300</lastBuildDate><atom:link href="https://bayten.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LeetCode | Backspace String Compare</title>
       <link>https://bayten.dev/posts/leetcode-backspace-string-compare/</link>
