@@ -6,7 +6,19 @@
     <description>Recent content in Home on Baris&#39; Personal Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 May 2023 12:00:45 +0300</lastBuildDate><atom:link href="https://bayten.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Jun 2023 15:16:04 +0300</lastBuildDate><atom:link href="https://bayten.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Abstract Classes and Interfaces in Java: Abstraction and Flexibility</title>
+      <link>https://bayten.dev/posts/abstract-classes-and-interfaces-in-java-abstraction-and-flexibility/</link>
+      <pubDate>Mon, 12 Jun 2023 15:16:04 +0300</pubDate>
+      
+      <guid>https://bayten.dev/posts/abstract-classes-and-interfaces-in-java-abstraction-and-flexibility/</guid>
+      <description>Hello everyone, 🖖🏼
+In this article, I would like to address the topic of Abstract and Interface, which has often confused me and made it difficult to understand which one to use and why. I will provide a detailed explanation of what these classes are, why they are used, and the differences between them. I hope you find this article informative and enjoyable.
+Happy reading! 🎇
+In Java, Abstract and Interface classes are two distinct structures that enable a strong representation of the abstraction concept in software design.</description>
+    </item>
+    
     <item>
       <title>Design Patterns | Fundamentals</title>
       <link>https://bayten.dev/posts/design-patterns-fundamentals/</link>

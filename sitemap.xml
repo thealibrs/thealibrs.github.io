@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bayten.dev/posts/design-patterns-fundamentals/</loc>
-    <lastmod>2023-05-13T12:00:45+03:00</lastmod>
+    <loc>https://bayten.dev/posts/abstract-classes-and-interfaces-in-java-abstraction-and-flexibility/</loc>
+    <lastmod>2023-06-12T15:16:04+03:00</lastmod>
   </url><url>
     <loc>https://bayten.dev/</loc>
-    <lastmod>2023-05-13T12:00:45+03:00</lastmod>
+    <lastmod>2023-06-12T15:16:04+03:00</lastmod>
   </url><url>
     <loc>https://bayten.dev/posts/</loc>
+    <lastmod>2023-06-12T15:16:04+03:00</lastmod>
+  </url><url>
+    <loc>https://bayten.dev/posts/design-patterns-fundamentals/</loc>
     <lastmod>2023-05-13T12:00:45+03:00</lastmod>
   </url><url>
     <loc>https://bayten.dev/posts/leetcode-backspace-string-compare/</loc>

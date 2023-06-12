@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Abstract Classes and Interfaces in Java: Abstraction and Flexibility | Baris&#39; Personal Blog</title>
+<meta property="og:title" content="Abstract Classes and Interfaces in Java: Abstraction and Flexibility | Baris&#39; Personal Blog" />
+<meta name="twitter:title" content="Abstract Classes and Interfaces in Java: Abstraction and Flexibility | Baris&#39; Personal Blog" />
+<meta itemprop="name" content="Abstract Classes and Interfaces in Java: Abstraction and Flexibility | Baris&#39; Personal Blog" />
+<meta name="application-name" content="Abstract Classes and Interfaces in Java: Abstraction and Flexibility | Baris&#39; Personal Blog" />
+<meta property="og:site_name" content="Awesome hugo blog" />
+
+<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
+<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+
+
+  <meta itemprop="image" content="https://bayten.dev/" />
+  <meta property="og:image" content="https://bayten.dev/" />
+  <meta name="twitter:image" content="https://bayten.dev/" />
+  <meta name="twitter:image:src" content="https://bayten.dev/" />
+
+
+
+
+    
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2023-06-12T15:16:04&#43;0300 />
+    <meta property="article:published_time" content=2023-06-12T15:16:04&#43;0300 />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Abstract Classes and Interfaces in Java: Abstraction and Flexibility",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2023-06-12",
+        "description": "",
+        "wordCount":  2185 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2023-06-12",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Baris\u0027 Personal Blog"
+        }
+    }
+    </script>
+
+  <meta name="generator" content="Hugo 0.111.1">
+
+  
+  <link rel="canonical" href="https://bayten.dev/posts/abstract-classes-and-interfaces-in-java-abstraction-and-flexibility/"><link href="/sass/main.min.5c3526dbfd0864d88f74bed943d6f70206ba385a17901d9d96b534b398530649.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet"></head><body data-theme = "dark" class="notransition">
+<script src="https://bayten.dev/js/themeLoader.min.4e9e1a253d543bbfec02e7f2460d9621e719fd739dc8a5256faa91cda6e12e03.js"></script><div class="navbar" role="navigation">
+  <nav class="menu" aria-label="Main Navigation">
+    <a href="/" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+    </a>
+    <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+    <label for="menu-trigger">
+      <span class="menu-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+      </span>
+    </label>
+
+    <div class="trigger">
+      <ul class="trigger-container">
+        
+        
+          <li>
+            <a 
+            class="menu-link "
+            href="/">
+            Home
+            </a>
+            
+          </li>
+        
+          <li>
+            <a 
+            class="menu-link active"
+            href="/posts/">
+            Posts
+            </a>
+            
+          </li>
+        
+          <li>
+            <a 
+            class="menu-link "
+            href="/about/">
+            About
+            </a>
+            
+          </li>
+        
+        <li class="menu-separator">
+          <span>|</span>
+        </li>
+      </ul>
+      <a id="mode" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Abstract Classes and Interfaces in Java: Abstraction and Flexibility</h1>
+                
+                <div class="post-meta">
+                    <time datetime="2023-06-12T15:16:04&#43;03:00" itemprop="datePublished"> Jun 12, 2023 </time>
+                </div>
+            </header>
+            <div class="page-content">
+                <p><img src="https://i.hizliresim.com/94iz4mp.jpg" alt=""></p>
+<p>Hello everyone, 🖖🏼</p>
+<p>In this article, I would like to address the topic of <strong>Abstract and Interface</strong>, which has often confused me and made it difficult to understand which one to use and why. I will provide a detailed explanation of what these classes are, why they are used, and the differences between them. I hope you find this article informative and enjoyable.</p>
+<p>Happy reading! 🎇</p>
+<p> </p>
+<p>In Java, Abstract and Interface classes are two distinct structures that enable a strong representation of the abstraction concept in software design. Both are abstract classes and cannot be instantiated directly, meaning they cannot be created as objects. However, these structures exhibit differences and offer unique advantages based on the scenarios in which they are used.</p>
+<p>Abstract classes are <strong>used to define and share common properties among concrete classes through their abstraction capabilities</strong>. They serve as an ideal tool to group classes with common characteristics in a class hierarchy and pass on these characteristics through inheritance.</p>
+<p>Abstract classes <strong>can combine abstract and concrete methods to specify the methods that must be implemented by subclasses</strong>. This increases code <strong>reusability and ensures interoperability</strong>.</p>
+<p>On the other hand, Interface classes are used <strong>as a kind of contract to define common behaviors or functionality among various classes</strong>. They determine which methods a class must implement, serving as a guideline. Interfaces in Java enable multiple inheritance by allowing a class to implement multiple interfaces, thus leveraging the flexibility advantage offered by multiple inheritance. They contribute to making the code more flexible, extensible, and easy to maintain.</p>
+<p>Now that we have taken a brief look at both concepts, we can delve into these concepts in more detail. 🐱‍🏍</p>
+<h1 id="abstract-classes">Abstract Classes</h1>
+<p>Abstraction is used to represent complex systems in a simpler and more understandable way in the real world. For example, let&rsquo;s consider a car and the common features that can exist in all cars. Fuel consumption, speed, braking system, number of doors, or color are some of the features that can be found in every car. We can take these common features as a foundation and create a model. With this foundation, we can then differentiate and customize the features to create cars with different characteristics. Essentially, what we are doing here is abstraction, and we use this abstract class to create new classes.</p>
+<p>Abstract classes are also used in a similar manner. We can create an abstract class with the basic features defined. By deriving different brands and models of cars from this abstract class, we can customize them accordingly.</p>
+<p>Abstract classes are abstract structures <strong>that define the properties (instance variables, etc.) and behaviors of an abstract class</strong>. These classes <strong>can be inherited and used by other concrete classes</strong>. One of the key features that differentiates abstract classes from interfaces is that <strong>they can contain both abstract and concrete methods</strong>. The abstract methods they contain are defined by the classes that inherit the abstract class, providing flexibility in the written code.</p>
+<p>Let&rsquo;s create an example abstract class.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">protected</span> <span class="n">String</span> <span class="n">color</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="nf">Shape</span><span class="o">(</span><span class="n">String</span> <span class="n">color</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">color</span> <span class="o">=</span> <span class="n">color</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">area</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Bu bir &#34;</span> <span class="o">+</span> <span class="n">color</span> <span class="o">+</span> <span class="s">&#34; şekildir.&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>In this example, we have created an abstract class called <strong>&ldquo;Shape&rdquo;</strong>. It encapsulates the common property of <strong>Shape</strong>, which is the <strong>&ldquo;color&rdquo;</strong> variable, and the <strong>&ldquo;display&rdquo;</strong> method. Additionally, the <strong>&ldquo;area&rdquo;</strong> method is defined as abstract, which means that each subclass inheriting from this class can override the <strong>&ldquo;area&rdquo;</strong> method according to its own implementation.</p>
+<p>Now, let&rsquo;s create two different classes that inherit from the abstract class <strong>&ldquo;Shape&rdquo;</strong> and examine their usage.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="kt">double</span> <span class="n">radius</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="nf">Circle</span><span class="o">(</span><span class="n">String</span> <span class="n">color</span><span class="o">,</span> <span class="kt">double</span> <span class="n">radius</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">super</span><span class="o">(</span><span class="n">color</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">radius</span> <span class="o">=</span> <span class="n">radius</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">double</span> <span class="nf">area</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// -----------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span> 
+</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="kt">double</span> <span class="n">length</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="kt">double</span> <span class="n">width</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="nf">Rectangle</span><span class="o">(</span><span class="n">String</span> <span class="n">color</span><span class="o">,</span> <span class="kt">double</span> <span class="n">length</span><span class="o">,</span> <span class="kt">double</span> <span class="n">width</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">super</span><span class="o">(</span><span class="n">color</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">length</span> <span class="o">=</span> <span class="n">length</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="n">width</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">double</span> <span class="nf">area</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">length</span> <span class="o">*</span> <span class="n">width</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>When the classes <strong>Rectangle</strong> and <strong>Circle</strong> inherit from the abstract class <strong>Shape</strong>, they acquire the properties defined in this class. However, if desired, they can also add their own properties on top of these inherited properties. For example, <strong>the Circle</strong> class may have a &ldquo;<strong>radius</strong>&rdquo; property, and the <strong>Rectangle</strong> class may have a &ldquo;<strong>width</strong>&rdquo; property.</p>
+<h1 id="is-a-relationship">IS-A Relationship</h1>
+<p>Here, there is another point I would like to address: the <strong>is-a</strong> relationship. Abstract classes and the classes inheriting from those abstract classes establish an <strong>is-a relationship</strong>. To briefly illustrate this relationship using our scenario as an example,</p>
+<blockquote>
+<p>The Rectangle <strong>is-a</strong> shape. The Circle <strong>is-a</strong> shape.</p>
+</blockquote>
+<p>So, Rectangle and Circle is a Shape and possesses all the properties of Shape.</p>
+<h1 id="real-life-examples">Real Life Examples</h1>
+<p>Alright, everything is fine, but how and when will I use these abstract classes in real-life projects? Now, let me try to provide some small examples about that.</p>
+<ul>
+<li>
+<p>For example, let&rsquo;s consider that we are developing an <strong>e-commerce application</strong>. In this application, we can create an abstract class that <strong>represents the general characteristics of products</strong>. For instance, we can create an abstract class named &lsquo;<strong>Product</strong>&rsquo; to define the common attributes of products. Subclasses can represent different product categories and define their own customized methods using the properties of the abstract class.</p>
+</li>
+<li>
+<p>Alternatively, let&rsquo;s imagine that we are designing a <strong>banking application</strong>. Here, we can utilize an abstract class that <strong>represents different types of bank accounts</strong>. For example, by creating an abstract class named &lsquo;<strong>BankAccount</strong>&rsquo;, we can define common attributes such as account number and balance. Subclasses can define methods and operations specific to different account types (e.g., current account, savings account, credit card account).</p>
+</li>
+</ul>
+<h1 id="summary">Summary</h1>
+<p>Let&rsquo;s try to summarize the whole topic in bullet points, considering the real-life examples we have discussed:</p>
+<ul>
+<li>Abstract classes can contain both methods and variables.</li>
+<li>They cannot be instantiated directly, meaning they cannot be called with the &rsquo;new()&rsquo; keyword.</li>
+<li>They can be inherited.</li>
+<li>They can contain both abstract and concrete methods.</li>
+<li>They have constructors.</li>
+<li>They establish an &ldquo;is-a&rdquo; relationship with the classes that inherit from them.</li>
+</ul>
+<p>Now let&rsquo;s move on to our next concept, <strong>Interface classes</strong>.</p>
+<h1 id="interface-classes">Interface Classes</h1>
+<p>Interface classes are a construct used in the Java programming language to <strong>define related methods and behaviors</strong>. An interface allows a class <strong>to implement a specific behavior or fulfill an interface</strong>. This enables Java to <strong>support multiple inheritance and allows different classes to have similar behavior</strong>.</p>
+<p>An interface only <strong>defines the signatures of methods (parameter list and name) without specifying the implementation details</strong>. This means that interfaces can be thought of as a contract or agreement between classes. When a class implements an interface, it is obligated to implement all the methods defined in that interface.</p>
+<p>The author of the book <em><strong>&lsquo;Learning Java&rsquo;</strong></em> has made a great analogy about interfaces.</p>
+<blockquote>
+<p><em>Interfaces are kind of like Boy Scout or Girl Scout merit badges. A scout who has learned to build a birdhouse can walk around wearing a little sleeve patch with a picture of one. This says to the world, “I know how to build a birdhouse.” <strong>Similarly, an interface is a list of methods that define some set of behavior for an object. Any class that implements each method listed in the interface can declare at compile time that it implements the interface and wear, as its merit badge, an extra type — the interface’s type</strong></em>.</p>
+</blockquote>
+<h1 id="can-do-relationship">CAN-DO Relationship</h1>
+<p>A similar relationship to the is-a relationship mentioned in abstract classes exists here as well. I believe that these relationships contribute to a clearer and easier understanding of these concepts.</p>
+<p>In the case of interface classes, a <strong>can-do</strong> relationship is established between the interface and the classes implementing it. We can think of it as <strong>having a certain skill</strong>. When a class implements an interface, <strong>it can possess the abilities defined by that interface</strong>.</p>
+<p>To illustrate with a small example,</p>
+<blockquote>
+<p>WhatsApp can do voice call</p>
+</blockquote>
+<p>Let&rsquo;s imagine in this example that we have an interface class named &ldquo;<strong>Phone</strong>&rdquo; and a subclass named &ldquo;<strong>WhatsApp</strong>&rdquo; where the &ldquo;<strong>WhatsApp</strong>&rdquo; class implements the &ldquo;<strong>Phone</strong>&rdquo; interface. Let&rsquo;s put this into code💻</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nf">Phone</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">voiceCall</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">textMessage</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Here, we have created a &ldquo;<strong>Phone</strong>&rdquo; interface and specified its methods. Now, let&rsquo;s create a class named &ldquo;<strong>WhatsApp</strong>&rdquo; and utilize this interface.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nf">WhatsApp</span><span class="o">()</span> <span class="kd">implements</span> <span class="n">Phone</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="n">String</span> <span class="n">logoColor</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="nf">WhatsApp</span><span class="o">(</span><span class="n">String</span> <span class="n">color</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">logoColor</span> <span class="o">=</span> <span class="n">color</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">voiceCall</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Starting voice call via WhatsApp&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">textMessage</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">message</span> <span class="o">+</span> <span class="s">&#34; message sent via WhatsApp&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>In this example, by implementing the <strong>Phone interface</strong>, we have added the <strong>voiceCall()</strong> and <strong>textMessage()</strong> functionalities to the <strong>WhatsApp class</strong>.</p>
+<p>So far, we have only used a single interface, but Java <strong>supports multiple interface inheritance</strong>. This means that <strong>a class can implement multiple interfaces</strong>. Now, let&rsquo;s enhance our previous example to demonstrate the usage of multiple interfaces.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Phone</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">makeCall</span><span class="o">(</span><span class="n">String</span> <span class="n">phoneNumber</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">sendMessage</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Camera</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">takePhoto</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">recordVideo</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>I have created two separate interface classes, <strong>Phone and Camera</strong>. Now let&rsquo;s implement them in the WhatsApp class.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Whatsapp</span> <span class="kd">implements</span> <span class="n">Phone</span><span class="o">,</span> <span class="n">Camera</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="n">String</span> <span class="n">logoColor</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="nf">WhatsApp</span><span class="o">(</span><span class="n">String</span> <span class="n">color</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">logoColor</span> <span class="o">=</span> <span class="n">color</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeCall</span><span class="o">(</span><span class="n">String</span> <span class="n">phoneNumber</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">phoneNumber</span><span class="o">+</span><span class="s">&#34; calling via WhatsApp&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendMessage</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">message</span><span class="o">+</span><span class="s">&#34; was sent via WhatsApp&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">takePhoto</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Photo taking via WhatsApp&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">recordVideo</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Video recording via WhatsApp&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>As we saw in our example, by implementing two different interfaces in the WhatsApp class, we provided the class with different capabilities.</p>
+<p>Now that we have covered the examples, I believe we have understood everything. However, let&rsquo;s explore a few more examples to see how we can apply these concepts in our real projects.</p>
+<h1 id="real-life-examples-1">Real Life Examples</h1>
+<ul>
+<li>
+<p>this time in the context of <strong>e-commerce.</strong> Suppose we want to <strong>integrate a payment system</strong>. We can create a <strong>common interface called PaymentGateway</strong>. Whenever we want to integrate a new payment system into the system, each payment system would implement the PaymentGateway interface and implement its own payment methods.
+Another example could be related to shipping options. We can think of different classes representing various shipping providers, and we can create a common interface for them. Each shipping provider would implement this common interface and carry out the shipping operations.</p>
+</li>
+<li>
+<p>Another example could be an <strong>hotel management system</strong>. We can create an interface called <strong>Room to represent different room types</strong>. Each room type would implement the Room interface and handle operations such as room reservation and retrieving room information.</p>
+</li>
+</ul>
+<p>So far, we have examined both concepts separately and provided examples. Now, let&rsquo;s combine what we have learned and write a sample code that uses both concepts(abstract+interface) together.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Abstract
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">sound</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Interface
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">interface</span> <span class="nc">Swimable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">swim</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// The Duck class that inherited from 
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Animal and implemented from Swimmable
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">class</span> <span class="nc">Duck</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Swimable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">sound</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Duck sound..&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">swim</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Duck is swimming..&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Main class
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Duck</span> <span class="n">duck</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Duck</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">duck</span><span class="o">.</span><span class="na">sound</span><span class="o">();</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">duck</span><span class="o">.</span><span class="na">swim</span><span class="o">();</span>   
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>In this example, we created an abstract class named <strong>Animal and an interface named Swimable</strong>. Then, we wrote <strong>the Duck class</strong>, which <strong>inherits from the Animal class and implements the Swimable interface</strong>. The Duck class fulfills the requirements of the sound method from the abstract class and the swim method from the interface. Thus, <strong>we have seen that in Java, a class can inherit from an abstract class and implement an interface at the same time</strong>.</p>
+<p>Now that we have covered the concept of interfaces, let&rsquo;s summarize everything we have discussed in brief bullet points.</p>
+<ul>
+<li>Interfaces only contain method signatures, <strong>not method implementations</strong>.</li>
+<li>They establish a <strong>can-do</strong> relationship with the classes that implement them.</li>
+<li>A class can inherit <strong>from multiple interfaces</strong>.</li>
+<li>By default, all interface members are implicitly abstract and public. You don&rsquo;t need to explicitly specify it.</li>
+<li>Interfaces specify what a class should do, not how it should do it.</li>
+<li>Like abstract classes, interface classes cannot be instantiated using the <strong>&ldquo;new&rdquo;</strong> keyword.</li>
+</ul>
+<h1 id="interface-vs-abstract-classes">Interface vs. Abstract Classes</h1>
+<p>Before we reach the end of this article, let&rsquo;s take a bird&rsquo;s-eye view of everything we&rsquo;ve covered and prepare a comparative table that can serve as a summary of the entire article.</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Abstract Class</th>
+<th>Interface Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Content</strong></td>
+<td>Methods and variables</td>
+<td>Only methods</td>
+</tr>
+<tr>
+<td><strong>Object Creation</strong></td>
+<td>Cannot be instantiated</td>
+<td>Cannot be instantiated</td>
+</tr>
+<tr>
+<td><strong>Inheritance</strong></td>
+<td>Can be inherited</td>
+<td>Can be implemented</td>
+</tr>
+<tr>
+<td><strong>Method Types</strong></td>
+<td>Both concrete and abstract methods</td>
+<td>Only abstract methods</td>
+</tr>
+<tr>
+<td><strong>Constructor</strong></td>
+<td>Present</td>
+<td>Absent</td>
+</tr>
+<tr>
+<td><strong>Relationship</strong></td>
+<td>is-a relationship</td>
+<td>Can-do relationship</td>
+</tr>
+<tr>
+<td><strong>Multiple Implementation</strong></td>
+<td>Not supported</td>
+<td>Supported</td>
+</tr>
+</tbody>
+</table>
+<p>Thank you for taking the time to read this article. I have tried to provide information about Interface and Abstract classes to the best of my ability. I hope it has been a helpful piece of writing.</p>
+<p>Happy Coding🖖🏼</p>
+<h1 id="references">REFERENCES</h1>
+<ul>
+<li>
+<p>Abstract Methods and Classes (The JavaTM Tutorials, Learning the Java Language, Interfaces and Inheritance) <a href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html">https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html</a></p>
+</li>
+<li>
+<p>Interfaces. In Learning java: An Introduction to Real-World Programming with Java (Fifth, pp. 161–162). O’REILLY MEDIA.</p>
+</li>
+</ul>
+
+            </div>
+        </article>
+    </main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> © 2023 Baris Ayten🖖🏼 </span>
+</footer>
+<script src="https://bayten.dev/js/themeSwitchnMenu.min.2a402288242b6930b175a0722c267e2353055739b3975834df35e56d00dd8f50.js"></script></body>
+</html>
